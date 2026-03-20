@@ -90,19 +90,19 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
         <div className="filter-row">
           <span className="filter-label">Gender</span>
           <div className="filter-chips">
-            {['Men', 'Women'].map(g => (
+            {[['Men', 'Mens'], ['Women', 'Womens']].map(([val, label]) => (
               <button
-                key={g}
-                id={`gender-${g.toLowerCase()}`}
-                className={`chip ${genderKey === g ? 'active' : ''}`}
-                data-gender={g}
-                onClick={() => onFilterChange('genderKey', genderKey === g ? '' : g)}
+                key={val}
+                id={`gender-${val.toLowerCase()}`}
+                className={`chip ${genderKey === val ? 'active' : ''}`}
+                data-gender={val}
+                onClick={() => onFilterChange('genderKey', genderKey === val ? '' : val)}
               >
                 <span className="chip-dot" />
-                {g}
-                {g === 'Men'
-                  ? <span className="gender-icon" style={{ marginLeft: '4px', marginRight: '-2px' }}>♂</span>
-                  : <span className="gender-icon" style={{ marginLeft: '4px', marginRight: '-2px' }}>♀</span>}
+                {label}
+                {val === 'Men'
+                  ? <span className="gender-icon" style={{ marginLeft: '2px', marginRight: '-2px' }}>♂</span>
+                  : <span className="gender-icon" style={{ marginLeft: '2px', marginRight: '-2px' }}>♀</span>}
               </button>
             ))}
           </div>
@@ -113,23 +113,52 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
       <div className="filter-row">
         <span className="filter-label">{isJunior ? 'Division / Age Group' : 'Grade'}</span>
         <div className="filter-chips">
-          {gradeChips.map(info => {
-            const gk = info.key
-            const isActive = gradeKey === gk
-            return (
-              <button
-                key={gk}
-                id={`grade-${gk.replace(/\s+/g, '-').toLowerCase()}`}
-                className={`chip ${isActive ? 'active-grade' : ''}`}
-                data-grade={gk}
-                onClick={() => onFilterChange('gradeKey', gradeKey === gk ? '' : gk)}
-              >
-                {info.label}
-                {!isJunior && info.gender === 'Men' && <span className="gender-icon" style={{ marginLeft: '4px' }}>♂</span>}
-                {!isJunior && info.gender === 'Women' && <span className="gender-icon" style={{ marginLeft: '4px' }}>♀</span>}
-              </button>
-            )
-          })}
+          {isJunior
+            ? gradeChips.map(info => {
+                const gk = info.key
+                const isActive = gradeKey === gk
+                return (
+                  <button
+                    key={gk}
+                    id={`grade-${gk.replace(/\s+/g, '-').toLowerCase()}`}
+                    className={`chip ${isActive ? 'active-grade' : ''}`}
+                    data-grade={gk}
+                    onClick={() => onFilterChange('gradeKey', gradeKey === gk ? '' : gk)}
+                  >
+                    {info.label}
+                  </button>
+                )
+              })
+            : (() => {
+                const mens = gradeChips.filter(i => i.gender === 'Men')
+                const womens = gradeChips.filter(i => i.gender === 'Women')
+                const renderChip = info => {
+                  const gk = info.key
+                  const isActive = gradeKey === gk
+                  return (
+                    <button
+                      key={gk}
+                      id={`grade-${gk.replace(/\s+/g, '-').toLowerCase()}`}
+                      className={`chip ${isActive ? 'active-grade' : ''}`}
+                      data-grade={gk}
+                      onClick={() => onFilterChange('gradeKey', gradeKey === gk ? '' : gk)}
+                    >
+                      {info.label}
+                      {info.gender === 'Men' && <span className="gender-icon" style={{ marginLeft: '2px' }}>♂</span>}
+                      {info.gender === 'Women' && <span className="gender-icon" style={{ marginLeft: '2px' }}>♀</span>}
+                    </button>
+                  )
+                }
+                return (
+                  <>
+                    {mens.map(renderChip)}
+                    {/* Force Women's grades onto a new line */}
+                    <span style={{ width: '100%', height: 0 }} />
+                    {womens.map(renderChip)}
+                  </>
+                )
+              })()
+          }
         </div>
       </div>
 

@@ -58,8 +58,8 @@ export default function App() {
 
   // Pre-fetch both datasets once so TeamsModal can show all divisions
   useEffect(() => {
-    fetch('/matches.json').then(r => r.json()).then(setSeniorData).catch(() => {})
-    fetch('/juniors.json').then(r => r.json()).then(setJuniorData).catch(() => {})
+    fetch('/matches.json').then(r => r.json()).then(setSeniorData).catch(() => { })
+    fetch('/juniors.json').then(r => r.json()).then(setJuniorData).catch(() => { })
   }, [])
 
   const handleModeChange = (newMode) => {
@@ -145,7 +145,7 @@ export default function App() {
       if (gradeKey && m.grade !== gradeKey) return false
       if (genderKey && m.gender !== genderKey) return false
       if (monthKey && m.date && !m.date.startsWith(monthKey)) return false
-      if (fieldKey && !m.isBye && m.field !== fieldKey) return false
+      if (fieldKey && (m.isBye || m.field !== fieldKey)) return false
       if (teamLower) {
         const a = (m.teamA || '').toLowerCase()
         const b = (m.teamB || '').toLowerCase()
@@ -291,7 +291,7 @@ export default function App() {
 
                 <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span
-                    title="This is a work in progress, there will be bugs"
+                    title="This is a work in progress based on incomplete draws, there may be bugs and inconsistant data"
                     style={{ background: 'rgba(211, 47, 47, 0.1)', color: 'var(--color-accent-1)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.7rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', border: '1px solid rgba(211, 47, 47, 0.25)', display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'help' }}
                   >
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-accent-1)' }}></span>
@@ -493,7 +493,7 @@ export default function App() {
       </div >
 
       <footer className="app-footer">
-        Manning Valley Hockey Association &nbsp;·&nbsp; 2026 Senior Competition
+        Manning Valley Hockey Association &nbsp;·&nbsp; 2026 Senior and Junior Competitions
       </footer>
     </div >
   )
