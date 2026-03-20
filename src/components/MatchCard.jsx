@@ -60,7 +60,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         url = teamObj.url
       }
     }
-    const imgContent = (
+    const imgContent = logoName ? (
       <img
         key={name}
         src={`${import.meta.env.BASE_URL}logos/${logoName}`}
@@ -69,7 +69,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         style={{ borderRadius: '50%' }}
         onError={(e) => { e.target.style.display = 'none'; }}
       />
-    )
+    ) : null
 
     return (
       <div className="team-display">
