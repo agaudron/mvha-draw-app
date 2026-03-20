@@ -271,7 +271,7 @@ export default function App() {
                     Buy me a beer
                   </a>
                   <a
-                    href="https://github.com/agaudron/hockey-app"
+                    href="https://github.com/agaudron/mvha-draw-app"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="View on GitHub"
@@ -452,11 +452,11 @@ export default function App() {
             )}
           </main>
         </div>
-      </div>
+      </div >
 
       <footer className="app-footer">
         Manning Valley Hockey Association &nbsp;·&nbsp; 2026 Senior Competition
       </footer>
-    </div>
+    </div >
   )
 }
