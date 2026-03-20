@@ -49,7 +49,7 @@ export default function App() {
   useEffect(() => {
     setData(null)
     setLoading(true)
-    const url = mode === 'junior' ? '/juniors.json' : '/matches.json'
+    const url = mode === 'junior' ? `${import.meta.env.BASE_URL}juniors.json` : `${import.meta.env.BASE_URL}matches.json`
     fetch(url)
       .then(r => r.json())
       .then(d => { setData(d); setLoading(false) })
