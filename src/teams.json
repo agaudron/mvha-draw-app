@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Chatham",
+        "logo": "Chatham.jpg",
+        "url": "https://www.revolutionise.com.au/chathamwolves/"
+    },
+    {
+        "name": "Cougars",
+        "logo": "Cougars.jpg",
+        "url": "https://www.revolutionise.com.au/mvcougars"
+    },
+    {
+        "name": "Gloucester",
+        "logo": "Gloucester.jpg",
+        "url": "https://www.revolutionise.com.au/ghc/"
+    },
+    {
+        "name": "Great Lakes Strikers",
+        "logo": "Great Lakes Strikers.jpg",
+        "url": "https://www.revolutionise.com.au/forsterstrikers"
+    },
+    {
+        "name": "Sharks",
+        "logo": "Sharks.jpg",
+        "url": "https://www.revolutionise.com.au/sharkhockey"
+    },
+    {
+        "name": "Tacking Point Thunder",
+        "logo": "Tacking Point Thunder.jpg",
+        "url": "https://www.thunderhockey.com.au/"
+    },
+    {
+        "name": "Taree West",
+        "logo": "Taree West.jpg",
+        "url": "https://www.revolutionise.com.au/twhc"
+    },
+    {
+        "name": "Tigers",
+        "logo": "Tigers.jpg",
+        "url": "https://www.revolutionise.com.au/tareetigershc",
+        "alt_urls": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        ]
+    },
+    {
+        "name": "Wingham",
+        "logo": "Wingham.png",
+        "url": "https://www.revolutionise.com.au/mvwhc"
+    }
+]
