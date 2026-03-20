@@ -121,7 +121,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         <img
           src={`/logos/${logo}`}
           alt={name}
-          style={{ width: '22px', height: '22px', objectFit: 'contain', borderRadius: '50%', background: 'white', padding: '2px', flexShrink: 0 }}
+          style={{ width: '32px', height: '32px', objectFit: 'contain', borderRadius: '50%', background: 'white', padding: '2px', flexShrink: 0 }}
           onError={e => { e.currentTarget.style.display = 'none' }}
         />
       ) : null
