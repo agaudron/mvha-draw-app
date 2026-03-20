@@ -95,6 +95,7 @@ export default function App() {
 
   const [showPastGames, setShowPastGames] = useState(() => getUrlParams().get('past') === '1')
   const [showByes, setShowByes] = useState(false)
+  const [viewLayout, setViewLayout] = useState(() => localStorage.getItem('viewLayout') || 'grid')
 
   // ── Sync all filter state → URL ────────────────────────────────────────────
   useEffect(() => {
@@ -162,12 +163,38 @@ export default function App() {
 
   // Group matches by date
   const groupedMatches = useMemo(() => {
+    // Parse "6.30pm" / "8.00am" → minutes since midnight for sorting
+    const parseTime = (t) => {
+      if (!t) return Infinity
+      const m = t.match(/(\d+)[.:](\d+)\s*(am|pm)/i)
+      if (!m) return Infinity
+      let h = parseInt(m[1], 10)
+      const min = parseInt(m[2], 10)
+      const ampm = m[3].toLowerCase()
+      if (ampm === 'pm' && h !== 12) h += 12
+      if (ampm === 'am' && h === 12) h = 0
+      return h * 60 + min
+    }
+
+    const FIELD_ORDER = ['ATF', 'TLF', 'Field 3', 'Port', 'TLF_East', 'ATF-1', 'ATF-2']
+    const fieldRank = (f) => {
+      if (!f) return 999
+      const idx = FIELD_ORDER.findIndex(n => n.toLowerCase() === f.toLowerCase())
+      return idx === -1 ? 998 : idx
+    }
+
     const groups = {}
     filteredMatches.forEach(m => {
       const key = m.date || 'Unknown'
       if (!groups[key]) groups[key] = []
       groups[key].push(m)
     })
+
+    // Sort each date's matches: by time first, then by field
+    Object.values(groups).forEach(arr => {
+      arr.sort((a, b) => parseTime(a.time) - parseTime(b.time) || fieldRank(a.field) - fieldRank(b.field))
+    })
+
     return Object.entries(groups).sort((a, b) => {
       const [am, ad] = getMonthDay(a[0])
       const [bm, bd] = getMonthDay(b[0])
@@ -438,6 +465,41 @@ export default function App() {
                       Export PDF
                     </button>
 
+                    {/* Layout toggle — segmented icon pill */}
+                    <div style={{
+                      display: 'inline-flex',
+                      border: '1px solid var(--color-border)',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      flexShrink: 0,
+                    }}>
+                      {[
+                        { value: 'grid', title: 'Grid view',
+                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
+                        { value: 'list', title: 'List view',
+                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> },
+                      ].map(({ value, title, icon }) => (
+                        <button
+                          key={value}
+                          title={title}
+                          onClick={() => { setViewLayout(value); localStorage.setItem('viewLayout', value) }}
+                          style={{
+                            width: '30px', height: '28px',
+                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                            border: 'none',
+                            borderRight: value === 'grid' ? '1px solid var(--color-border)' : 'none',
+                            background: viewLayout === value ? 'color-mix(in srgb, var(--color-accent-1) 15%, transparent)' : 'var(--color-surface)',
+                            color: viewLayout === value ? 'var(--color-accent-1)' : 'var(--color-text-muted)',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s',
+                          }}
+                          onMouseOver={e => { if (viewLayout !== value) e.currentTarget.style.background = 'var(--color-surface-hover)' }}
+                          onMouseOut={e => { if (viewLayout !== value) e.currentTarget.style.background = 'var(--color-surface)' }}
+                        >
+                          {icon}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -471,7 +533,7 @@ export default function App() {
                           })()}</h2>
                           <div className="date-group-line" />
                         </div>
-                        <div className="match-grid">
+                        <div className={viewLayout === 'list' ? 'match-list' : 'match-grid'}>
                           {matches.map((match, i) => (
                             <MatchCard
                               key={`${date}-${i}`}
@@ -479,6 +541,7 @@ export default function App() {
                               index={cardIndex++}
                               selectedTeam={filters.team}
                               onFilterChange={handleFilterChange}
+                              layout={viewLayout}
                             />
                           ))}
                         </div>
