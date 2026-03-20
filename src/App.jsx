@@ -58,8 +58,8 @@ export default function App() {
 
   // Pre-fetch both datasets once so TeamsModal can show all divisions
   useEffect(() => {
-    fetch('/matches.json').then(r => r.json()).then(setSeniorData).catch(() => { })
-    fetch('/juniors.json').then(r => r.json()).then(setJuniorData).catch(() => { })
+    fetch(`${import.meta.env.BASE_URL}matches.json`).then(r => r.json()).then(setSeniorData).catch(() => { })
+    fetch(`${import.meta.env.BASE_URL}juniors.json`).then(r => r.json()).then(setJuniorData).catch(() => { })
   }, [])
 
   const handleModeChange = (newMode) => {

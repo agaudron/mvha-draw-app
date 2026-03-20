@@ -61,7 +61,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
     const imgContent = (
       <img
         key={name}
-        src={`/logos/${logoName}`}
+        src={`${import.meta.env.BASE_URL}logos/${logoName}`}
         alt={name}
         className="team-logo"
         style={{ borderRadius: '50%' }}
@@ -119,7 +119,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
       const logo = getLogoName(name)
       return logo ? (
         <img
-          src={`/logos/${logo}`}
+          src={`${import.meta.env.BASE_URL}logos/${logo}`}
           alt={name}
           style={{ width: '32px', height: '32px', objectFit: 'contain', borderRadius: '50%', background: 'white', padding: '2px', flexShrink: 0 }}
           onError={e => { e.currentTarget.style.display = 'none' }}
