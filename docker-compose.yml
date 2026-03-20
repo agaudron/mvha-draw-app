@@ -3,7 +3,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: hockey-draw-frontend
+    container_name: mvha-draw-frontend
     ports:
       - "8080:80"
     restart: unless-stopped
