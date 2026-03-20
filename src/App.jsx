@@ -237,7 +237,7 @@ export default function App() {
               Close Emulator
             </button>
           </div>
-          <iframe src="/secret.html" style={{ border: 'none', flex: 1, width: '100%' }} title="Freedoom" />
+          <iframe src={`${import.meta.env.BASE_URL}secret.html`} style={{ border: 'none', flex: 1, width: '100%' }} title="Freedoom" />
         </div>
       )}
       {/* Ambient background orbs */}
@@ -253,7 +253,7 @@ export default function App() {
           <div className="header-left">
             <a href="https://www.revolutionise.com.au/mvha" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex' }} title="Visit Manning Valley Hockey Association Website">
               <img
-                src="/logos/manninghockey.jpg"
+                src={`${import.meta.env.BASE_URL}logos/manninghockey.jpg`}
                 alt="Manning Valley Hockey Association Logo"
                 className="header-logo"
               />

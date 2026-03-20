@@ -36,6 +36,8 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
     if (lower.includes('tacking point thunder')) return 'Tacking Point Thunder.jpg'
     if (lower.includes('tigers')) return 'Tigers.jpg'
     if (lower.includes('wingham')) return 'Wingham.png'
+    const upper = name.toUpperCase()
+    if (upper === 'BYE' || upper === 'TBA' || upper === 'TBD') return null
     return `${name}.jpg`
   }
 
