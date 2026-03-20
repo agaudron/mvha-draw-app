@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react'
 
 import FilterBar from './components/FilterBar'
 import MatchCard from './components/MatchCard'
+import TeamsModal from './components/TeamsModal'
 import { exportMatchesToPdf } from './utils/exportPdf'
 import { parseMatchDate, getTodayDateString } from './utils/dateUtils'
 import links from './links.json'
@@ -39,8 +40,11 @@ export default function App() {
 
   const [mode, setMode] = useState(() => readModeFromUrl())
   const [data, setData] = useState(null)
+  const [seniorData, setSeniorData] = useState(null)
+  const [juniorData, setJuniorData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [filters, setFilters] = useState(() => readFiltersFromUrl())
+  const [showTeamsModal, setShowTeamsModal] = useState(false)
 
   useEffect(() => {
     setData(null)
@@ -51,6 +55,12 @@ export default function App() {
       .then(d => { setData(d); setLoading(false) })
       .catch(() => setLoading(false))
   }, [mode])
+
+  // Pre-fetch both datasets once so TeamsModal can show all divisions
+  useEffect(() => {
+    fetch('/matches.json').then(r => r.json()).then(setSeniorData).catch(() => {})
+    fetch('/juniors.json').then(r => r.json()).then(setJuniorData).catch(() => {})
+  }, [])
 
   const handleModeChange = (newMode) => {
     if (newMode === mode) return
@@ -176,6 +186,23 @@ export default function App() {
 
   return (
     <div className="app">
+      {showTeamsModal && (
+        <TeamsModal
+          onClose={() => setShowTeamsModal(false)}
+          seniorData={seniorData}
+          juniorData={juniorData}
+          onSelectGrade={(gradeKey, isJunior) => {
+            // Switch mode if necessary, then apply grade filter
+            const targetMode = isJunior ? 'junior' : 'senior'
+            if (targetMode !== mode) {
+              localStorage.setItem('drawMode', targetMode)
+              setMode(targetMode)
+            }
+            setFilters({ gradeKey, team: '', genderKey: '', monthKey: '', fieldKey: '' })
+            setShowTeamsModal(false)
+          }}
+        />
+      )}
       {showDoom && (
         <div className="doom-overlay" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'black', zIndex: 99999, display: 'flex', flexDirection: 'column' }}>
           <div style={{ padding: '16px', display: 'flex', justifyContent: 'flex-end', background: '#111' }}>
@@ -217,6 +244,17 @@ export default function App() {
                 >
                   <span className="hero-badge-dot" />
                   2026 Season
+                </button>
+
+                {/* Teams modal trigger */}
+                <button
+                  className="hero-badge"
+                  onClick={() => setShowTeamsModal(true)}
+                  style={{ cursor: 'pointer', border: 'none', outline: 'none', userSelect: 'none' }}
+                  title="View clubs and their divisions"
+                >
+                  <span className="hero-badge-dot" />
+                  Teams
                 </button>
 
                 {links['Match Card'] && (
