@@ -89,6 +89,13 @@ export default function App() {
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => localStorage.getItem('sidebarOpen') !== 'false')
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 900)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 900)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('sidebarOpen', isSidebarOpen)
@@ -209,6 +216,7 @@ export default function App() {
   }, [filteredMatches])
 
   const hasActiveFilter = Object.values(filters).some(v => Array.isArray(v) ? v.length > 0 : v !== '')
+  const effectiveLayout = isMobile ? 'grid' : viewLayout
 
   // Stats
   const totalMatches = data ? data.matches.filter(m => !m.isBye).length : 0
@@ -476,45 +484,47 @@ export default function App() {
                       Export PDF
                     </button>
 
-                    {/* Layout toggle — segmented icon pill */}
-                    <div style={{
-                      display: 'inline-flex',
-                      border: '1px solid var(--color-border)',
-                      borderRadius: '8px',
-                      overflow: 'hidden',
-                      flexShrink: 0,
-                    }}>
-                      {[
-                        {
-                          value: 'grid', title: 'Grid view',
-                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>
-                        },
-                        {
-                          value: 'list', title: 'List view',
-                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                        },
-                      ].map(({ value, title, icon }) => (
-                        <button
-                          key={value}
-                          title={title}
-                          onClick={() => { setViewLayout(value); localStorage.setItem('viewLayout', value) }}
-                          style={{
-                            width: '30px', height: '28px',
-                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                            border: 'none',
-                            borderRight: value === 'grid' ? '1px solid var(--color-border)' : 'none',
-                            background: viewLayout === value ? 'color-mix(in srgb, var(--color-accent-1) 15%, transparent)' : 'var(--color-surface)',
-                            color: viewLayout === value ? 'var(--color-accent-1)' : 'var(--color-text-muted)',
-                            cursor: 'pointer',
-                            transition: 'all 0.15s',
-                          }}
-                          onMouseOver={e => { if (viewLayout !== value) e.currentTarget.style.background = 'var(--color-surface-hover)' }}
-                          onMouseOut={e => { if (viewLayout !== value) e.currentTarget.style.background = 'var(--color-surface)' }}
-                        >
-                          {icon}
-                        </button>
-                      ))}
-                    </div>
+                    {/* Layout toggle — segmented icon pill (hidden on mobile) */}
+                    {!isMobile && (
+                      <div style={{
+                        display: 'inline-flex',
+                        border: '1px solid var(--color-border)',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        flexShrink: 0,
+                      }}>
+                        {[
+                          {
+                            value: 'grid', title: 'Grid view',
+                            icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>
+                          },
+                          {
+                            value: 'list', title: 'List view',
+                            icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                          },
+                        ].map(({ value, title, icon }) => (
+                          <button
+                            key={value}
+                            title={title}
+                            onClick={() => { setViewLayout(value); localStorage.setItem('viewLayout', value) }}
+                            style={{
+                              width: '30px', height: '28px',
+                              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                              border: 'none',
+                              borderRight: value === 'grid' ? '1px solid var(--color-border)' : 'none',
+                              background: viewLayout === value ? 'color-mix(in srgb, var(--color-accent-1) 15%, transparent)' : 'var(--color-surface)',
+                              color: viewLayout === value ? 'var(--color-accent-1)' : 'var(--color-text-muted)',
+                              cursor: 'pointer',
+                              transition: 'all 0.15s',
+                            }}
+                            onMouseOver={e => { if (viewLayout !== value) e.currentTarget.style.background = 'var(--color-surface-hover)' }}
+                            onMouseOut={e => { if (viewLayout !== value) e.currentTarget.style.background = 'var(--color-surface)' }}
+                          >
+                            {icon}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -548,7 +558,7 @@ export default function App() {
                           })()}</h2>
                           <div className="date-group-line" />
                         </div>
-                        <div className={viewLayout === 'list' ? 'match-list' : 'match-grid'}>
+                        <div className={effectiveLayout === 'list' ? 'match-list' : 'match-grid'}>
                           {matches.map((match, i) => (
                             <MatchCard
                               key={`${date}-${i}`}
@@ -556,7 +566,9 @@ export default function App() {
                               index={cardIndex++}
                               selectedTeam={filters.team}
                               onFilterChange={handleFilterChange}
-                              layout={viewLayout}
+                              layout={effectiveLayout}
+                              selectedGradeKeys={filters.gradeKeys}
+                              selectedFieldKey={filters.fieldKey}
                             />
                           ))}
                         </div>

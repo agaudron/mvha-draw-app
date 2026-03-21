@@ -19,7 +19,7 @@ const getFieldMapUrl = (field) => {
   return `https://www.google.com/maps/search/?api=1&query=${coords.lat},${coords.lng}`
 }
 
-export default function MatchCard({ match, index, selectedTeam, onFilterChange, layout = 'grid' }) {
+export default function MatchCard({ match, index, selectedTeam, onFilterChange, layout = 'grid', selectedGradeKeys = [], selectedFieldKey = '' }) {
   const animDelay = `${(index % 12) * 0.04}s`
 
   const getLogoName = (name) => {
@@ -119,14 +119,33 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
 
     const miniLogo = (name) => {
       const logo = getLogoName(name)
-      return logo ? (
+      if (!logo) return null
+
+      let url = null
+      const teamObj = teamsData.find(t => t.logo === logo)
+      if (teamObj) {
+        if (teamObj.alt_urls && teamObj.alt_urls.length > 0) {
+          const allUrls = [teamObj.url, ...teamObj.alt_urls].filter(Boolean)
+          url = allUrls[Math.floor(Math.random() * allUrls.length)]
+        } else {
+          url = teamObj.url
+        }
+      }
+
+      const imgContent = (
         <img
           src={`${import.meta.env.BASE_URL}logos/${logo}`}
           alt={name}
           style={{ width: '32px', height: '32px', objectFit: 'contain', borderRadius: '50%', background: 'white', padding: '2px', flexShrink: 0 }}
           onError={e => { e.currentTarget.style.display = 'none' }}
         />
-      ) : null
+      )
+
+      return url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }} title={`Visit ${name} website`}>
+          {imgContent}
+        </a>
+      ) : imgContent
     }
 
     const formatDate = () => {
@@ -151,7 +170,13 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         <span
           className="grade-badge"
           style={{ cursor: onFilterChange ? 'pointer' : 'default', flexShrink: 0 }}
-          onClick={e => { if (onFilterChange && match.grade) { e.stopPropagation(); onFilterChange('gradeKeys', [match.grade]) } }}
+          onClick={e => {
+            if (onFilterChange && match.grade) {
+              e.stopPropagation()
+              const isOnlyThisGrade = selectedGradeKeys.length === 1 && selectedGradeKeys[0] === match.grade
+              onFilterChange('gradeKeys', isOnlyThisGrade ? [] : [match.grade])
+            }
+          }}
           title={onFilterChange ? `Filter by ${match.grade}` : undefined}
         >
           {match.gradeLabel || match.grade}
@@ -182,7 +207,13 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
                 className="field-tag list-meta-item"
                 data-field={match.field.replace(/\s+/g, '-').toLowerCase()}
                 style={{ cursor: onFilterChange ? 'pointer' : 'default', padding: '3px 6px', fontSize: '0.75rem', textAlign: 'center' }}
-                onClick={e => { if (onFilterChange) { e.stopPropagation(); onFilterChange('fieldKey', match.field) } }}
+                onClick={e => {
+                  if (onFilterChange) {
+                    e.stopPropagation()
+                    const isAlreadySelected = selectedFieldKey === match.field
+                    onFilterChange('fieldKey', isAlreadySelected ? '' : match.field)
+                  }
+                }}
               >
                 {match.field.toLowerCase().startsWith('field') ? match.field : `Field ${match.field}`}
               </span>
@@ -221,7 +252,8 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
           onClick={(e) => {
             if (onFilterChange && match.grade) {
               e.stopPropagation()
-              onFilterChange('gradeKeys', [match.grade])
+              const isOnlyThisGrade = selectedGradeKeys.length === 1 && selectedGradeKeys[0] === match.grade
+              onFilterChange('gradeKeys', isOnlyThisGrade ? [] : [match.grade])
             }
           }}
           onMouseOver={e => onFilterChange && (e.currentTarget.style.transform = 'scale(1.05)')}
@@ -242,7 +274,8 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
               onClick={(e) => {
                 if (onFilterChange) {
                   e.stopPropagation()
-                  onFilterChange('fieldKey', match.field)
+                  const isAlreadySelected = selectedFieldKey === match.field
+                  onFilterChange('fieldKey', isAlreadySelected ? '' : match.field)
                 }
               }}
               onMouseOver={e => onFilterChange && (e.currentTarget.style.transform = 'scale(1.05)')}
