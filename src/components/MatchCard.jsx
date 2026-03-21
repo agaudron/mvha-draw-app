@@ -151,7 +151,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         <span
           className="grade-badge"
           style={{ cursor: onFilterChange ? 'pointer' : 'default', flexShrink: 0 }}
-          onClick={e => { if (onFilterChange && match.grade) { e.stopPropagation(); onFilterChange('gradeKey', match.grade) } }}
+          onClick={e => { if (onFilterChange && match.grade) { e.stopPropagation(); onFilterChange('gradeKeys', [match.grade]) } }}
           title={onFilterChange ? `Filter by ${match.grade}` : undefined}
         >
           {match.gradeLabel || match.grade}
@@ -221,7 +221,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
           onClick={(e) => {
             if (onFilterChange && match.grade) {
               e.stopPropagation()
-              onFilterChange('gradeKey', match.grade)
+              onFilterChange('gradeKeys', [match.grade])
             }
           }}
           onMouseOver={e => onFilterChange && (e.currentTarget.style.transform = 'scale(1.05)')}

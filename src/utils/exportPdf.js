@@ -12,7 +12,7 @@ export function exportMatchesToPdf(matches, filters) {
   // Document active filters
   const activeFilters = []
   if (filters?.genderKey) activeFilters.push(filters.genderKey)
-  if (filters?.gradeKey) activeFilters.push(filters.gradeKey)
+  if (filters?.gradeKeys?.length > 0) activeFilters.push(filters.gradeKeys.join(', '))
   if (filters?.team) activeFilters.push(`Team: ${filters.team}`)
   if (filters?.monthKey) activeFilters.push(`Month: ${filters.monthKey}`)
   if (filters?.fieldKey) activeFilters.push(`Field: ${filters.fieldKey}`)

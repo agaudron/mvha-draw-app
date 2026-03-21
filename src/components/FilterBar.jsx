@@ -4,7 +4,7 @@ const SENIOR_GRADE_ORDER = ['B-Grade M', 'C-Grade M', 'MNCHL M', 'MNCHL W', 'Div
 const JUNIOR_GRADE_ORDER = ['Div 1', 'Div 2', 'U12s', 'U10s', 'U8s']
 
 export default function FilterBar({ data, filters, onFilterChange, onClear, theme, setTheme, mode, onModeChange }) {
-  const { gradeKey, team, genderKey, monthKey, fieldKey } = filters
+  const { gradeKeys = [], team, genderKey, monthKey, fieldKey } = filters
   const isJunior = mode === 'junior'
 
   const allTeams = useMemo(() => {
@@ -113,17 +113,27 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
       <div className="filter-row">
         <span className="filter-label">{isJunior ? 'Division / Age Group' : 'Grade'}</span>
         <div className="filter-chips">
+          <button
+            className={`chip ${gradeKeys.length === 0 ? 'active-grade' : ''}`}
+            onClick={() => onFilterChange('gradeKeys', [])}
+          >
+            All
+          </button>
           {isJunior
             ? gradeChips.map(info => {
                 const gk = info.key
-                const isActive = gradeKey === gk
+                const isActive = gradeKeys.includes(gk)
                 return (
                   <button
                     key={gk}
                     id={`grade-${gk.replace(/\s+/g, '-').toLowerCase()}`}
                     className={`chip ${isActive ? 'active-grade' : ''}`}
                     data-grade={gk}
-                    onClick={() => onFilterChange('gradeKey', gradeKey === gk ? '' : gk)}
+                    onClick={() => {
+                      const isSelected = gradeKeys.includes(gk)
+                      const nextKeys = isSelected ? gradeKeys.filter(k => k !== gk) : [...gradeKeys, gk]
+                      onFilterChange('gradeKeys', nextKeys)
+                    }}
                   >
                     {info.label}
                   </button>
@@ -134,14 +144,18 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
                 const womens = gradeChips.filter(i => i.gender === 'Women')
                 const renderChip = info => {
                   const gk = info.key
-                  const isActive = gradeKey === gk
+                  const isActive = gradeKeys.includes(gk)
                   return (
                     <button
                       key={gk}
                       id={`grade-${gk.replace(/\s+/g, '-').toLowerCase()}`}
                       className={`chip ${isActive ? 'active-grade' : ''}`}
                       data-grade={gk}
-                      onClick={() => onFilterChange('gradeKey', gradeKey === gk ? '' : gk)}
+                      onClick={() => {
+                        const isSelected = gradeKeys.includes(gk)
+                        const nextKeys = isSelected ? gradeKeys.filter(k => k !== gk) : [...gradeKeys, gk]
+                        onFilterChange('gradeKeys', nextKeys)
+                      }}
                     >
                       {info.label}
                       {info.gender === 'Men' && <span className="gender-icon" style={{ marginLeft: '2px' }}>♂</span>}

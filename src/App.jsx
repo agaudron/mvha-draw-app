@@ -30,7 +30,7 @@ export default function App() {
   const readFiltersFromUrl = () => {
     const p = getUrlParams()
     return {
-      gradeKey: p.get('grade') || '',
+      gradeKeys: (p.get('grade') || '').split(',').filter(Boolean),
       team: p.get('team') || '',
       genderKey: p.get('gender') || '',
       monthKey: p.get('month') || '',
@@ -72,18 +72,19 @@ export default function App() {
   const handleFilterChange = useCallback((key, value) => {
     setFilters(prev => {
       const next = { ...prev, [key]: value }
-      if (key === 'genderKey' && prev.gradeKey && data) {
-        const currentGradeInfo = data.grades.find(g => g.key === prev.gradeKey)
-        if (currentGradeInfo && value && currentGradeInfo.gender !== value) {
-          next.gradeKey = ''
-        }
+      if (key === 'genderKey' && prev.gradeKeys && prev.gradeKeys.length > 0 && data) {
+        // Filter out gradeKeys that don't match the newly selected gender
+        next.gradeKeys = prev.gradeKeys.filter(gk => {
+          const currentGradeInfo = data.grades.find(g => g.key === gk)
+          return currentGradeInfo && (!value || currentGradeInfo.gender === value)
+        })
       }
       return next
     })
   }, [data])
 
   const handleClear = useCallback(() => {
-    setFilters({ gradeKey: '', team: '', genderKey: '', monthKey: '', fieldKey: '' })
+    setFilters({ gradeKeys: [], team: '', genderKey: '', monthKey: '', fieldKey: '' })
   }, [])
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
@@ -101,7 +102,7 @@ export default function App() {
   useEffect(() => {
     const p = new URLSearchParams()
     if (mode !== 'senior') p.set('mode', mode)
-    if (filters.gradeKey) p.set('grade', filters.gradeKey)
+    if (filters.gradeKeys && filters.gradeKeys.length > 0) p.set('grade', filters.gradeKeys.join(','))
     if (filters.team) p.set('team', filters.team)
     if (filters.genderKey) p.set('gender', filters.genderKey)
     if (filters.monthKey) p.set('month', filters.monthKey)
@@ -143,7 +144,7 @@ export default function App() {
         }
       }
 
-      if (gradeKey && m.grade !== gradeKey) return false
+      if (filters.gradeKeys && filters.gradeKeys.length > 0 && !filters.gradeKeys.includes(m.grade)) return false
       if (genderKey && m.gender !== genderKey) return false
       if (monthKey && m.date && !m.date.startsWith(monthKey)) return false
       if (fieldKey && (m.isBye || m.field !== fieldKey)) return false
@@ -225,7 +226,7 @@ export default function App() {
               localStorage.setItem('drawMode', targetMode)
               setMode(targetMode)
             }
-            setFilters({ gradeKey, team: '', genderKey: '', monthKey: '', fieldKey: '' })
+            setFilters({ gradeKeys: [gradeKey], team: '', genderKey: '', monthKey: '', fieldKey: '' })
             setShowTeamsModal(false)
           }}
         />
