@@ -184,7 +184,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
                 style={{ cursor: onFilterChange ? 'pointer' : 'default', padding: '3px 6px', fontSize: '0.75rem', textAlign: 'center' }}
                 onClick={e => { if (onFilterChange) { e.stopPropagation(); onFilterChange('fieldKey', match.field) } }}
               >
-                {match.field}
+                {match.field.toLowerCase().startsWith('field') ? match.field : `Field ${match.field}`}
               </span>
             )
             return mapUrl
@@ -248,7 +248,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
               onMouseOver={e => onFilterChange && (e.currentTarget.style.transform = 'scale(1.05)')}
               onMouseOut={e => onFilterChange && (e.currentTarget.style.transform = 'scale(1)')}
             >
-              {match.field}
+              {match.field.toLowerCase().startsWith('field') ? match.field : `Field ${match.field}`}
             </span>
           )
           return mapUrl

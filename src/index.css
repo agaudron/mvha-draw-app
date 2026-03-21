@@ -32,23 +32,23 @@
   --color-text-muted: #6e6464;
 
   /* Grade Colors */
-  --grade-b-grade-m: #f6ad55;
+  --grade-b-grade-m: #dd9035;
   /* warm amber */
-  --grade-c-grade-m: #63b3ed;
+  --grade-c-grade-m: #4f96ce;
   /* sky blue */
-  --grade-mnchl-m: #68d391;
+  --grade-mnchl-m: #51b576;
   /* mint green */
-  --grade-mnchl-w: #f687b3;
+  --grade-mnchl-w: #d66c94;
   /* rose pink */
-  --grade-div1-w: #b794f4;
+  --grade-div1-w: #9e75e3;
   /* lavender */
-  --grade-div2-w: #fc8181;
+  --grade-div2-w: #db6262;
   /* coral red */
-  --grade-div3-w: #f6e05e;
+  --grade-div3-w: #d1be4b;
   /* golden yellow */
-  --grade-div3-m: #4fd1c5;
+  --grade-div3-m: #3dbfb1;
   /* teal */
-  --grade-nsw: #a0aec0;
+  --grade-nsw: #8797ab;
   /* slate */
 
   /* Field Colors */
@@ -553,27 +553,27 @@ body {
 
 /* Junior grade chip colours */
 .chip[data-grade="Div 1"] {
-  --gc: #3b82f6;
+  --gc: #2b6fe3;
 }
 
 /* blue */
 .chip[data-grade="Div 2"] {
-  --gc: #8b5cf6;
+  --gc: #754ae3;
 }
 
 /* purple */
 .chip[data-grade="U12s"] {
-  --gc: #10b981;
+  --gc: #0ea673;
 }
 
 /* emerald */
 .chip[data-grade="U10s"] {
-  --gc: #f59e0b;
+  --gc: #df8f09;
 }
 
 /* amber */
 .chip[data-grade="U8s"] {
-  --gc: #f43f5e;
+  --gc: #de2b49;
 }
 
 /* rose */
@@ -882,23 +882,23 @@ body {
 
 /* Junior grade card colours — matches the filter chip palette */
 .match-card[data-grade="Div 1"] {
-  --card-color: #3b82f6;
+  --card-color: #2b6fe3;
 }
 
 .match-card[data-grade="Div 2"] {
-  --card-color: #8b5cf6;
+  --card-color: #754ae3;
 }
 
 .match-card[data-grade="U12s"] {
-  --card-color: #10b981;
+  --card-color: #0ea673;
 }
 
 .match-card[data-grade="U10s"] {
-  --card-color: #f59e0b;
+  --card-color: #df8f09;
 }
 
 .match-card[data-grade="U8s"] {
-  --card-color: #f43f5e;
+  --card-color: #de2b49;
 }
 
 @keyframes card-enter {
