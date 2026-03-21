@@ -71,14 +71,14 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
 
       {/* Team filter */}
       <div className="filter-row" style={{ width: '100%' }}>
-        <span className="filter-label">Team</span>
+        <span className="filter-label">Club</span>
         <select
           id="team-select"
           className="filter-select"
           value={team}
           onChange={e => onFilterChange('team', e.target.value)}
         >
-          <option value="">All Teams</option>
+          <option value="">All Clubs</option>
           {allTeams.map(t => (
             <option key={t} value={t}>{t}</option>
           ))}

@@ -123,3 +123,29 @@ make down    # Stop with docker-compose
 | `make stop` | Stop and remove Docker container |
 | `make up` | Start with docker-compose |
 | `make down` | Stop with docker-compose |
+
+
+## Teams Json File
+The teams.json file is used to store the team Names, shortname, Logos and links to the team pages.
+
+It also supports `alt_url` field, this is for including extra URLs such as sponsors that will display in the team card.
+
+Example:
+
+```json
+{
+  "full_team_name": "Chatham Wolves",
+  "team_name": "Chatham",  // As shown on the draw
+  "logo": "logos/taree.png",
+  "alt_url": [
+    {
+      "name": "Sponsor 1",
+      "url": "https://www.sponsor1.com.au"
+    },
+    {
+      "name": "Sponsor 2",
+      "url": "https://www.sponsor2.com.au"
+    }
+  ]
+}
+```
