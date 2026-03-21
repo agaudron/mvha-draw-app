@@ -573,7 +573,7 @@ body {
 
 /* amber */
 .chip[data-grade="U8s"] {
-  --gc: #de2b49;
+  --gc: #7ba8a5;
 }
 
 /* rose */
@@ -898,7 +898,7 @@ body {
 }
 
 .match-card[data-grade="U8s"] {
-  --card-color: #de2b49;
+  --card-color: #7ba8a5;
 }
 
 @keyframes card-enter {
