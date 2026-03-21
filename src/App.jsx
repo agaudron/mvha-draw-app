@@ -88,6 +88,11 @@ export default function App() {
   }, [])
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => localStorage.getItem('sidebarOpen') !== 'false')
+
+  useEffect(() => {
+    localStorage.setItem('sidebarOpen', isSidebarOpen)
+  }, [isSidebarOpen])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -203,7 +208,7 @@ export default function App() {
     })
   }, [filteredMatches])
 
-  const hasActiveFilter = Object.values(filters).some(v => v !== '')
+  const hasActiveFilter = Object.values(filters).some(v => Array.isArray(v) ? v.length > 0 : v !== '')
 
   // Stats
   const totalMatches = data ? data.matches.filter(m => !m.isBye).length : 0
@@ -318,20 +323,13 @@ export default function App() {
                 </>)}
 
                 <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span
-                    title="This is a work in progress based on incomplete draws, there may be bugs and inconsistant data"
-                    style={{ background: 'rgba(211, 47, 47, 0.1)', color: 'var(--color-accent-1)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.7rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', border: '1px solid rgba(211, 47, 47, 0.25)', display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'help' }}
-                  >
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-accent-1)' }}></span>
-                    Beta Release
-                  </span>
                   <a
                     href="https://buymeacoffee.com/aidangaudrz"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ background: 'rgba(211, 47, 47, 0.1)', color: 'var(--color-accent-1)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.7rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', border: '1px solid rgba(211, 47, 47, 0.25)', display: 'inline-flex', alignItems: 'center', gap: '6px', textDecoration: 'none', transition: 'all 0.2s' }}
-                    onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.background = 'rgba(211, 47, 47, 0.2)'; }}
-                    onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.background = 'rgba(211, 47, 47, 0.1)'; }}
+                    style={{ background: 'rgba(245, 158, 11, 0.15)', color: 'var(--color-text-primary)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.7rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', border: '1px solid rgba(245, 158, 11, 0.4)', display: 'inline-flex', alignItems: 'center', gap: '6px', textDecoration: 'none', transition: 'all 0.2s' }}
+                    onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.background = 'rgba(245, 158, 11, 0.25)'; }}
+                    onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.background = 'rgba(245, 158, 11, 0.15)'; }}
                   >
                     <span style={{ fontSize: '0.9rem' }}>🍺</span>
                     Buy me a beer
@@ -364,22 +362,34 @@ export default function App() {
           </div>
         </header>
 
-        <div className="layout-content">
-          {/* Sidebar Filters */}
-          <aside className="layout-sidebar">
-            {data && (
-              <FilterBar
-                data={data}
-                filters={filters}
-                onFilterChange={handleFilterChange}
-                onClear={handleClear}
-                theme={theme}
-                setTheme={setTheme}
-                mode={mode}
-                onModeChange={handleModeChange}
-              />
-            )}
-          </aside>
+        <div className={`layout-content ${!isSidebarOpen ? 'sidebar-collapsed' : ''}`}>
+          {/* Sidebar Filters Wrapper */}
+          <div className="sidebar-wrapper">
+            <aside className="layout-sidebar">
+              {data && (
+                <FilterBar
+                  data={data}
+                  filters={filters}
+                  onFilterChange={handleFilterChange}
+                  onClear={handleClear}
+                  theme={theme}
+                  setTheme={setTheme}
+                  mode={mode}
+                  onModeChange={handleModeChange}
+                />
+              )}
+            </aside>
+
+            {/* Collapse Tab / Button */}
+            <button
+              className="sidebar-toggle-btn"
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              title={isSidebarOpen ? 'Collapse Filters' : 'Expand Filters'}
+            >
+              <span className="toggle-icon-desktop">{isSidebarOpen ? '◀' : '▶'}</span>
+              <span className="toggle-text-mobile">{isSidebarOpen ? 'Hide Filters ▴' : 'Show Filters ▾'}</span>
+            </button>
+          </div>
 
           {/* Main Results */}
           <main className="layout-main">
@@ -438,9 +448,9 @@ export default function App() {
                       onClick={() => exportMatchesToPdf(baseFilteredMatches, filters)}
                       style={{
                         padding: '6px 14px',
-                        background: 'rgba(211,47,47,0.1)',
-                        border: '1px solid rgba(211,47,47,0.4)',
-                        color: 'var(--color-accent-1)',
+                        background: 'var(--color-surface)',
+                        border: '1px solid var(--color-border)',
+                        color: 'var(--color-text-primary)',
                         borderRadius: 'var(--radius-sm)',
                         fontWeight: 600,
                         cursor: 'pointer',
@@ -450,12 +460,12 @@ export default function App() {
                         transition: 'var(--transition)'
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.background = 'rgba(225,61,61,0.2)';
-                        e.currentTarget.style.borderColor = 'rgba(225,61,61,0.6)';
+                        e.currentTarget.style.background = 'var(--color-surface-hover)';
+                        e.currentTarget.style.borderColor = 'var(--color-border-active)';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.background = 'rgba(225,61,61,0.1)';
-                        e.currentTarget.style.borderColor = 'rgba(225,61,61,0.4)';
+                        e.currentTarget.style.background = 'var(--color-surface)';
+                        e.currentTarget.style.borderColor = 'var(--color-border)';
                       }}
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -475,10 +485,14 @@ export default function App() {
                       flexShrink: 0,
                     }}>
                       {[
-                        { value: 'grid', title: 'Grid view',
-                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
-                        { value: 'list', title: 'List view',
-                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> },
+                        {
+                          value: 'grid', title: 'Grid view',
+                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>
+                        },
+                        {
+                          value: 'list', title: 'List view',
+                          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                        },
                       ].map(({ value, title, icon }) => (
                         <button
                           key={value}

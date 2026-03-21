@@ -94,6 +94,10 @@
   --gradient-card-default: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 
   --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+
+  /* Refined, elegant reds for light mode readability */
+  --grade-div2-w: #e88d82;
+  --field-tlf_east: #e57373;
 }
 
 [data-theme='light'] .bg-orb {
@@ -313,17 +317,69 @@ body {
   align-items: flex-start;
   margin-top: 0;
   margin-bottom: 48px;
+  transition: gap 0.3s ease;
+}
+
+.sidebar-wrapper {
+  position: sticky;
+  top: 32px;
+  align-self: flex-start;
+  z-index: 10;
+  display: flex;
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  right: -24px;
+  top: 20px;
+  width: 24px;
+  height: 48px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar-toggle-btn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-accent-1);
+}
+
+.toggle-text-mobile {
+  display: none;
+}
+
+.toggle-icon-desktop {
+  display: inline;
 }
 
 .layout-sidebar {
   flex: 0 0 280px;
+  width: 280px;
   display: flex;
   flex-direction: column;
   position: sticky;
   top: 32px;
   max-height: calc(100vh - 64px);
   overflow-y: auto;
+  overflow-x: hidden;
   align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.sidebar-collapsed .layout-sidebar {
+  flex: 0 0 0px;
+  width: 0px;
+  opacity: 0;
+  margin-right: -32px;
+  pointer-events: none;
 }
 
 .layout-sidebar::-webkit-scrollbar {
@@ -1285,10 +1341,45 @@ body {
     flex-direction: column;
   }
 
+  .sidebar-wrapper {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+  }
+
   .layout-sidebar {
     position: static;
-    flex: none;
+    flex: none !important;
+    width: 100% !important;
+    max-height: 2000px;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    overflow: hidden;
+  }
+
+  .sidebar-collapsed .layout-sidebar {
+    max-height: 0;
+    opacity: 0;
+    margin: 0 !important;
+  }
+
+  .sidebar-toggle-btn {
+    position: static;
     width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    margin-top: 12px;
+    box-shadow: none;
+    font-size: 0.9rem;
+  }
+
+  .toggle-icon-desktop {
+    display: none;
+  }
+
+  .toggle-text-mobile {
+    display: inline;
+    font-weight: 600;
   }
 
   .hero {
