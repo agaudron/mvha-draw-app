@@ -59,7 +59,7 @@ export default function TeamsModal({ onClose, seniorData, juniorData, onSelectGr
           background: 'var(--color-surface)',
           border: '1px solid var(--color-border)',
           borderRadius: '16px',
-          maxWidth: '780px',
+          maxWidth: '600px',
           width: '100%',
           maxHeight: '85vh',
           display: 'flex',
@@ -105,8 +105,8 @@ export default function TeamsModal({ onClose, seniorData, juniorData, onSelectGr
         {/* Scrollable content */}
         <div style={{ overflowY: 'auto', padding: '16px 24px 24px', flex: 1 }}>
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+            display: 'flex',
+            flexDirection: 'column',
             gap: '12px',
           }}>
             {teamsData.map(team => {
@@ -149,7 +149,7 @@ export default function TeamsModal({ onClose, seniorData, juniorData, onSelectGr
                   {/* Logo */}
                   <img
                     src={`/logos/${team.logo}`}
-                    alt={`${team.name} logo`}
+                    alt={`${team.full_club_name || team.name} logo`}
                     style={{
                       width: '46px',
                       height: '46px',
@@ -176,7 +176,7 @@ export default function TeamsModal({ onClose, seniorData, juniorData, onSelectGr
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                       }}>
-                        {team.name}
+                        {team.full_club_name || team.name}
                       </span>
                       {/* External link icon */}
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none"

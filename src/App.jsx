@@ -295,7 +295,7 @@ export default function App() {
                   title="View clubs and their divisions"
                 >
                   <span className="hero-badge-dot" />
-                  Teams
+                  Clubs
                 </button>
 
                 {links['Match Card'] && (
@@ -582,8 +582,9 @@ export default function App() {
         </div>
       </div >
 
-      <footer className="app-footer">
-        Manning Valley Hockey Association &nbsp;·&nbsp; 2026 Senior and Junior Competitions
+      <footer className="app-footer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+        <div>Manning Valley Hockey Association &nbsp;·&nbsp; 2026 Senior and Junior Competitions</div>
+        <div style={{ fontSize: '0.85em', opacity: 0.7 }}>Hosted by GitHub Pages</div>
       </footer>
     </div >
   )

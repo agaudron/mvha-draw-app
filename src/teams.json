@@ -1,46 +1,55 @@
 [
     {
         "name": "Chatham",
+        "full_club_name": "Chatham Wolves Hockey Club",
         "logo": "Chatham.jpg",
         "url": "https://www.revolutionise.com.au/chathamwolves/"
     },
     {
         "name": "Cougars",
+        "full_club_name": "Cundletown Cougars Hockey Club",
         "logo": "Cougars.jpg",
         "url": "https://www.revolutionise.com.au/mvcougars"
     },
     {
         "name": "Gloucester",
+        "full_club_name": "Gloucester Hockey Club",
         "logo": "Gloucester.jpg",
         "url": "https://www.revolutionise.com.au/ghc/"
     },
     {
         "name": "Great Lakes Strikers",
+        "full_club_name": "Great Lakes Strikers",
         "logo": "Great Lakes Strikers.jpg",
         "url": "https://www.revolutionise.com.au/forsterstrikers"
     },
     {
         "name": "Sharks",
+        "full_club_name": "Sharks Hockey Club",
         "logo": "Sharks.jpg",
         "url": "https://www.revolutionise.com.au/sharkhockey"
     },
     {
         "name": "Tacking Point Thunder",
+        "full_club_name": "Tacking Point Thunder",
         "logo": "Tacking Point Thunder.jpg",
         "url": "https://www.thunderhockey.com.au/"
     },
     {
         "name": "Taree West",
+        "full_club_name": "Taree West Hockey Club",
         "logo": "Taree West.jpg",
         "url": "https://www.revolutionise.com.au/twhc"
     },
     {
         "name": "Tigers",
+        "full_club_name": "Taree Tigers Hockey Club",
         "logo": "Tigers.jpg",
         "url": "https://www.revolutionise.com.au/tareetigershc"
     },
     {
         "name": "Wingham",
+        "full_club_name": "Wingham Hockey Club",
         "logo": "Wingham.png",
         "url": "https://www.revolutionise.com.au/mvwhc"
     }
