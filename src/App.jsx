@@ -333,17 +333,6 @@ export default function App() {
 
                 <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <a
-                    href="https://buymeacoffee.com/aidangaudrz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ background: 'rgba(245, 158, 11, 0.15)', color: 'var(--color-text-primary)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.7rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', border: '1px solid rgba(245, 158, 11, 0.4)', display: 'inline-flex', alignItems: 'center', gap: '6px', textDecoration: 'none', transition: 'all 0.2s' }}
-                    onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.background = 'rgba(245, 158, 11, 0.25)'; }}
-                    onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.background = 'rgba(245, 158, 11, 0.15)'; }}
-                  >
-                    <span style={{ fontSize: '0.9rem' }}>🍺</span>
-                    Buy me a beer
-                  </a>
-                  <a
                     href="https://github.com/agaudron/mvha-draw-app"
                     target="_blank"
                     rel="noopener noreferrer"
