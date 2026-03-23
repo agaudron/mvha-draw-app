@@ -85,6 +85,7 @@ export default function App() {
 
   const handleClear = useCallback(() => {
     setFilters({ gradeKeys: [], team: '', genderKey: '', monthKey: '', fieldKey: '' })
+    setShowByes(false)
   }, [])
 
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
