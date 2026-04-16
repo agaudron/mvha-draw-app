@@ -4,8 +4,17 @@ const SENIOR_GRADE_ORDER = ['B-Grade M', 'C-Grade M', 'MNCHL M', 'MNCHL W', 'Div
 const JUNIOR_GRADE_ORDER = ['Div 1', 'Div 2', 'U12s', 'U10s', 'U8s']
 
 export default function FilterBar({ data, filters, onFilterChange, onClear, theme, setTheme, mode, onModeChange }) {
-  const { gradeKeys = [], team, genderKey, monthKey, fieldKey } = filters
+  const { gradeKeys = [], team, genderKey, monthKey, fieldKey, umpireKey } = filters
   const isJunior = mode === 'junior'
+
+  const allUmpires = useMemo(() => {
+    if (!data) return []
+    const set = new Set()
+    data.matches.forEach(m => {
+      if (m.umpires) m.umpires.forEach(u => set.add(u))
+    })
+    return [...set].sort()
+  }, [data])
 
   const allTeams = useMemo(() => {
     const set = new Set()
@@ -209,7 +218,20 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
         </div>
       </div>
 
-
+      {/* Umpire filter */}
+      <div className="filter-row" style={{ width: '100%', paddingBottom: '16px' }}>
+        <span className="filter-label">Umpire</span>
+        <select
+          className="filter-select"
+          value={umpireKey || ''}
+          onChange={e => onFilterChange('umpireKey', e.target.value)}
+        >
+          <option value="">All Umpires</option>
+          {allUmpires.map(u => (
+            <option key={u} value={u}>{u}</option>
+          ))}
+        </select>
+      </div>
 
     </div>
   )

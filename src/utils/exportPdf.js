@@ -16,6 +16,7 @@ export function exportMatchesToPdf(matches, filters) {
   if (filters?.team) activeFilters.push(`Team: ${filters.team}`)
   if (filters?.monthKey) activeFilters.push(`Month: ${filters.monthKey}`)
   if (filters?.fieldKey) activeFilters.push(`Field: ${filters.fieldKey}`)
+  if (filters?.umpireKey) activeFilters.push(`Umpire: ${filters.umpireKey}`)
   
   const filterText = activeFilters.length > 0 
     ? `Draw: ${activeFilters.join(' - ')}`
@@ -34,23 +35,28 @@ export function exportMatchesToPdf(matches, filters) {
   doc.text('Note: This data is subject to change. Please confirm officially.', 14, 43)
 
   // Table Data
-  const tableColumn = ["Date", "Time", "Grade", "Field", "Team A", "Team B"]
+  const tableColumn = ["Date", "Time", "Grade", "Field", "Team A", "Team B", "Umpires"]
   const tableRows = []
 
   matches.forEach(match => {
     // Determine the teams
     let teamA = match.teamA || ''
     let teamB = match.isBye ? 'BYE' : (match.teamB || '')
+    let umpiresArr = match.umpires ? [...match.umpires] : []
     
     // Swap teams if the user filtered by a specific team and it's currently Team B
-    if (filters?.team && teamA.toLowerCase().trim() !== filters.team.toLowerCase().trim() && teamB.toLowerCase().trim() === filters.team.toLowerCase().trim()) {
+    const isSelectedTeamB = filters?.team && teamA.toLowerCase().trim() !== filters.team.toLowerCase().trim() && teamB.toLowerCase().trim() === filters.team.toLowerCase().trim()
+    const isSelectedUmpireRight = filters?.umpireKey && match.umpires?.[1] === filters.umpireKey
+
+    if (isSelectedTeamB || isSelectedUmpireRight) {
       teamA = match.teamB || ''
       teamB = match.teamA || ''
+      umpiresArr.reverse()
     }
 
     // Determine grade with gender if provided
     const genderStr = match.gender === 'Men' ? ' (M)' : match.gender === 'Women' ? ' (W)' : ''
-    const grade = (match.gradeLabel || match.grade || '') + genderStr
+    const grade = (match.round ? `R${match.round} ` : '') + (match.gradeLabel || match.grade || '') + genderStr
 
     const dateStr = match.day && match.date ? `${match.day}, ${match.date}` : match.day || match.date || ''
 
@@ -60,7 +66,8 @@ export function exportMatchesToPdf(matches, filters) {
       grade,
       match.field || '',
       teamA,
-      teamB
+      teamB,
+      umpiresArr.join('\n')
     ]
     tableRows.push(rowData)
   })

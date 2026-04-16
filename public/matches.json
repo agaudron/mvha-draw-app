@@ -464,7 +464,7 @@
       "teamB": "Sharks",
       "umpires": [
         "Dom Tag (Taree West D3-W)",
-        "Dakota sipek (Taree West D3-W)"
+        "Dakota Sipek (Taree West D3-W)"
       ],
       "isBye": false
     },
@@ -652,7 +652,7 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Thomas Davy (TareeWest D2-W)",
+        "Thomas Davy (Taree West D2-W)",
         "Janene Watts (Tigers D1-W)"
       ],
       "isBye": false
@@ -1125,7 +1125,7 @@
       "teamB": "Wingham",
       "umpires": [
         "Kelly Northam (Chatham D2-W)",
-        "Dakota sipek (Taree West D3-W)"
+        "Dakota Sipek (Taree West D3-W)"
       ],
       "isBye": false
     },
@@ -4820,9 +4820,7 @@
       "field": "Field 3",
       "teamA": "Cougars",
       "teamB": "Great Lakes Strikers",
-      "umpires": [
-        "Games times"
-      ],
+      "umpires": [],
       "isBye": false
     },
     {
@@ -4836,9 +4834,7 @@
       "field": "ATF",
       "teamA": "Sharks",
       "teamB": "Wingham",
-      "umpires": [
-        "maybe subject to"
-      ],
+      "umpires": [],
       "isBye": false
     },
     {
@@ -4852,10 +4848,7 @@
       "field": "TLF",
       "teamA": "MID NORTH COAST",
       "teamB": "HOCKEY LEAGUE",
-      "umpires": [
-        "GRAND FINALS",
-        "minor change"
-      ],
+      "umpires": [],
       "isBye": false
     },
     {
@@ -4869,9 +4862,7 @@
       "field": "Port",
       "teamA": "MID NORTH COAST",
       "teamB": "HOCKEY LEAGUE",
-      "umpires": [
-        "GRAND FINALS"
-      ],
+      "umpires": [],
       "isBye": false
     },
     {
@@ -4885,9 +4876,7 @@
       "field": "Port",
       "teamA": "MID NORTH COAST",
       "teamB": "HOCKEY LEAGUE",
-      "umpires": [
-        "GRAND FINALS"
-      ],
+      "umpires": [],
       "isBye": false
     },
     {

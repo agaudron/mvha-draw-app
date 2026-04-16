@@ -35,6 +35,7 @@ export default function App() {
       genderKey: p.get('gender') || '',
       monthKey: p.get('month') || '',
       fieldKey: p.get('field') || '',
+      umpireKey: p.get('umpire') || '',
     }
   }
 
@@ -84,7 +85,7 @@ export default function App() {
   }, [data])
 
   const handleClear = useCallback(() => {
-    setFilters({ gradeKeys: [], team: '', genderKey: '', monthKey: '', fieldKey: '' })
+    setFilters({ gradeKeys: [], team: '', genderKey: '', monthKey: '', fieldKey: '', umpireKey: '' })
     setShowByes(false)
   }, [])
 
@@ -120,6 +121,7 @@ export default function App() {
     if (filters.genderKey) p.set('gender', filters.genderKey)
     if (filters.monthKey) p.set('month', filters.monthKey)
     if (filters.fieldKey) p.set('field', filters.fieldKey)
+    if (filters.umpireKey) p.set('umpire', filters.umpireKey)
     if (showPastGames) p.set('past', '1')
     const qs = p.toString()
     const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname
@@ -141,7 +143,7 @@ export default function App() {
 
   const baseFilteredMatches = useMemo(() => {
     if (!data) return []
-    const { gradeKey, team, genderKey, monthKey, fieldKey } = filters
+    const { gradeKey, team, genderKey, monthKey, fieldKey, umpireKey } = filters
     const teamLower = team.toLowerCase().trim()
     const now = new Date()
 
@@ -161,6 +163,7 @@ export default function App() {
       if (genderKey && m.gender !== genderKey) return false
       if (monthKey && m.date && !m.date.startsWith(monthKey)) return false
       if (fieldKey && (m.isBye || m.field !== fieldKey)) return false
+      if (umpireKey && (!m.umpires || !m.umpires.includes(umpireKey))) return false
       if (teamLower) {
         const a = (m.teamA || '').toLowerCase()
         const b = (m.teamB || '').toLowerCase()
@@ -240,7 +243,7 @@ export default function App() {
               localStorage.setItem('drawMode', targetMode)
               setMode(targetMode)
             }
-            setFilters({ gradeKeys: [gradeKey], team: '', genderKey: '', monthKey: '', fieldKey: '' })
+            setFilters({ gradeKeys: [gradeKey], team: '', genderKey: '', monthKey: '', fieldKey: '', umpireKey: '' })
             setShowTeamsModal(false)
           }}
         />
@@ -555,6 +558,7 @@ export default function App() {
                               match={match}
                               index={cardIndex++}
                               selectedTeam={filters.team}
+                              selectedUmpire={filters.umpireKey}
                               onFilterChange={handleFilterChange}
                               layout={effectiveLayout}
                               selectedGradeKeys={filters.gradeKeys}

@@ -3,12 +3,12 @@ import { parseMatchDate } from '../utils/dateUtils'
 
 // DMS → decimal conversion (S and W are negative)
 const FIELD_COORDS = {
-  atf:       { lat: -31.89569,  lng: 152.48853 }, // 31°53'44.5"S 152°29'18.7"E
-  tlf:       { lat: -31.89589,  lng: 152.48953 }, // 31°53'45.2"S 152°29'22.3"E
+  atf: { lat: -31.89569, lng: 152.48853 }, // 31°53'44.5"S 152°29'18.7"E
+  tlf: { lat: -31.89589, lng: 152.48953 }, // 31°53'45.2"S 152°29'22.3"E
   'field 3': { lat: -31.896917, lng: 152.48969 }, // 31°53'48.9"S 152°29'22.9"E
-  port:      { lat: -31.452306, lng: 152.899639 }, // 31°27'08.3"S 152°53'58.7"E
-  'atf-1':   { lat: -31.89569,  lng: 152.48853 }, // same as ATF
-  'atf-2':   { lat: -31.89569,  lng: 152.48853 }, // same as ATF
+  port: { lat: -31.452306, lng: 152.899639 }, // 31°27'08.3"S 152°53'58.7"E
+  'atf-1': { lat: -31.89569, lng: 152.48853 }, // same as ATF
+  'atf-2': { lat: -31.89569, lng: 152.48853 }, // same as ATF
 }
 
 const getFieldMapUrl = (field) => {
@@ -19,7 +19,7 @@ const getFieldMapUrl = (field) => {
   return `https://www.google.com/maps/search/?api=1&query=${coords.lat},${coords.lng}`
 }
 
-export default function MatchCard({ match, index, selectedTeam, onFilterChange, layout = 'grid', selectedGradeKeys = [], selectedFieldKey = '' }) {
+export default function MatchCard({ match, index, selectedTeam, selectedUmpire, onFilterChange, layout = 'grid', selectedGradeKeys = [], selectedFieldKey = '' }) {
   const animDelay = `${(index % 12) * 0.04}s`
 
   const getLogoName = (name) => {
@@ -118,12 +118,14 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
 
   // ── List (horizontal) layout ──────────────────────────────────────────────
   if (layout === 'list') {
-    const isSelectedTeamB = selectedTeam && match.teamB &&
-      match.teamB.toLowerCase().trim() === selectedTeam.toLowerCase().trim()
-    const leftName = isSelectedTeamB ? match.teamB : match.teamA
-    const rightName = isSelectedTeamB ? match.teamA : match.teamB
-    const leftUmpire = isSelectedTeamB ? match.umpires?.[1] : match.umpires?.[0]
-    const rightUmpire = isSelectedTeamB ? match.umpires?.[0] : match.umpires?.[1]
+    const isSelectedTeamB = selectedTeam && match.teamB && match.teamB.toLowerCase().trim() === selectedTeam.toLowerCase().trim()
+    const isSelectedUmpireRight = selectedUmpire && match.umpires?.[1] === selectedUmpire
+    const swapSides = isSelectedTeamB || isSelectedUmpireRight
+
+    const leftName = swapSides ? match.teamB : match.teamA
+    const rightName = swapSides ? match.teamA : match.teamB
+    const leftUmpire = swapSides ? match.umpires?.[1] : match.umpires?.[0]
+    const rightUmpire = swapSides ? match.umpires?.[0] : match.umpires?.[1]
 
     const miniLogo = (name) => {
       const logo = getLogoName(name)
@@ -259,7 +261,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
       data-grade={match.grade}
       style={{ animationDelay: animDelay }}
     >
-      <div className="card-header">
+      <div className="card-header" style={{ position: 'relative' }}>
         <span
           className="grade-badge"
           style={{ cursor: onFilterChange ? 'pointer' : 'default', transition: 'transform 0.1s' }}
@@ -277,6 +279,14 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
           {match.gradeLabel || match.grade || '—'}
           {match.gender === 'Men' ? <span className="gender-icon">♂</span> : match.gender === 'Women' ? <span className="gender-icon">♀</span> : ''}
         </span>
+
+        {match.round && (
+          <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+            <span className="round-badge" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary, #666)', padding: '3px 8px', background: 'var(--bg-tertiary, rgba(0,0,0,0.05))', borderRadius: '4px', whiteSpace: 'nowrap' }}>
+              Round {match.round}
+            </span>
+          </div>
+        )}
         {match.field && (() => {
           const mapUrl = getFieldMapUrl(match.field)
           const tag = (
@@ -306,10 +316,13 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
 
       {(() => {
         const isSelectedTeamB = selectedTeam && match.teamB && match.teamB.toLowerCase().trim() === selectedTeam.toLowerCase().trim()
-        const leftTeamName = isSelectedTeamB ? match.teamB : match.teamA
-        const rightTeamName = isSelectedTeamB ? match.teamA : match.teamB
-        const leftUmpire = isSelectedTeamB ? match.umpires?.[1] : match.umpires?.[0]
-        const rightUmpire = isSelectedTeamB ? match.umpires?.[0] : match.umpires?.[1]
+        const isSelectedUmpireRight = selectedUmpire && match.umpires?.[1] === selectedUmpire
+        const swapSides = isSelectedTeamB || isSelectedUmpireRight
+
+        const leftTeamName = swapSides ? match.teamB : match.teamA
+        const rightTeamName = swapSides ? match.teamA : match.teamB
+        const leftUmpire = swapSides ? match.umpires?.[1] : match.umpires?.[0]
+        const rightUmpire = swapSides ? match.umpires?.[0] : match.umpires?.[1]
 
         return (
           <div className="teams-vs" style={{ alignItems: 'flex-start' }}>

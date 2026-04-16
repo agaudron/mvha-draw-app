@@ -100,7 +100,7 @@ for line in raw_text.splitlines():
         umpires = []
         for u in umpires_raw:
             u = u.strip('&').strip()
-            if u and u != "UMPIRES":
+            if u and u != "UMPIRES" and u.lower() not in ["grand finals", "game times", "maybe subject to", "minor change", "games times"]:
                 umpires.append(u)
 
         match_obj = {
