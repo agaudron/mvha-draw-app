@@ -41,7 +41,7 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
     return `${name}.jpg`
   }
 
-  const renderTeam = (name) => {
+  const renderTeam = (name, umpire = null) => {
     if (!name || name === '—') {
       return (
         <div className="team-display">
@@ -77,6 +77,12 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
           {url ? <a href={url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', width: '100%', height: '100%' }} title={`Visit ${name} website`}>{imgContent}</a> : imgContent}
         </div>
         <span className="team-name">{name}</span>
+        {umpire && (
+          <span className="team-umpire" style={{ fontSize: '0.75rem', opacity: 0.8, marginTop: '4px', textAlign: 'center', lineHeight: '1.2', maxWidth: '120px' }}>
+            <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600, opacity: 0.7, marginBottom: '2px' }}>Umpire</div>
+            {umpire}
+          </span>
+        )}
       </div>
     )
   }
@@ -116,6 +122,8 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
       match.teamB.toLowerCase().trim() === selectedTeam.toLowerCase().trim()
     const leftName = isSelectedTeamB ? match.teamB : match.teamA
     const rightName = isSelectedTeamB ? match.teamA : match.teamB
+    const leftUmpire = isSelectedTeamB ? match.umpires?.[1] : match.umpires?.[0]
+    const rightUmpire = isSelectedTeamB ? match.umpires?.[0] : match.umpires?.[1]
 
     const miniLogo = (name) => {
       const logo = getLogoName(name)
@@ -188,12 +196,18 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         <div className="list-teams">
           <span className="list-team">
             {miniLogo(leftName)}
-            <span className="list-team-name">{leftName || '—'}</span>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="list-team-name">{leftName || '—'}</span>
+              {leftUmpire && <span className="list-team-umpire" style={{ fontSize: '0.7rem', opacity: 0.8, marginTop: '1px' }}><strong style={{ opacity: 0.7, fontWeight: 600 }}>Umpire:</strong> {leftUmpire}</span>}
+            </div>
           </span>
           <span className="list-vs">vs</span>
           <span className="list-team">
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', marginRight: '6px' }}>
+              <span className="list-team-name">{rightName || '—'}</span>
+              {rightUmpire && <span className="list-team-umpire" style={{ fontSize: '0.7rem', opacity: 0.8, marginTop: '1px' }}><strong style={{ opacity: 0.7, fontWeight: 600 }}>Umpire:</strong> {rightUmpire}</span>}
+            </div>
             {miniLogo(rightName)}
-            <span className="list-team-name">{rightName || '—'}</span>
           </span>
         </div>
 
@@ -294,16 +308,18 @@ export default function MatchCard({ match, index, selectedTeam, onFilterChange, 
         const isSelectedTeamB = selectedTeam && match.teamB && match.teamB.toLowerCase().trim() === selectedTeam.toLowerCase().trim()
         const leftTeamName = isSelectedTeamB ? match.teamB : match.teamA
         const rightTeamName = isSelectedTeamB ? match.teamA : match.teamB
+        const leftUmpire = isSelectedTeamB ? match.umpires?.[1] : match.umpires?.[0]
+        const rightUmpire = isSelectedTeamB ? match.umpires?.[0] : match.umpires?.[1]
 
         return (
-          <div className="teams-vs">
-            {renderTeam(leftTeamName)}
-            <div className="vs-divider">
+          <div className="teams-vs" style={{ alignItems: 'flex-start' }}>
+            {renderTeam(leftTeamName, leftUmpire)}
+            <div className="vs-divider" style={{ marginTop: '20px' }}>
               <div className="vs-line" />
               <span className="vs-text">VS</span>
               <div className="vs-line" />
             </div>
-            {renderTeam(rightTeamName)}
+            {renderTeam(rightTeamName, rightUmpire)}
           </div>
         )
       })()}

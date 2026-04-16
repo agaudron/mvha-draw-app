@@ -44,7 +44,8 @@ KNOWN_GRADES = {
 # Pattern: day  grade  date  time  field  teamA  V  teamB
 # Pattern: day  grade  date  time  field  teamA  V  teamB
 ROW_RE = re.compile(
-    r'^\s*(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
+    r'^\s*(?:(\d+)\s+)?'
+    r'(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
     r'\s+(B-Grade\s+M|C-Grade\s+M|MNCHL\s+M|MNCHL\s+W|Div\s+1\s+W|Div\s+2\s+W|Div\s+3\s+W|Div\s+3\s+M|NSW)?'
     r'\s+((?:March|April|May|June|July|August|September|October)\s+\d+(?:st|nd|rd|th))'
     r'\s+(\d+\.\d+(?:am|pm)?)'
@@ -53,7 +54,8 @@ ROW_RE = re.compile(
 )
 
 BYE_RE = re.compile(
-    r'^\s*(B-Grade\s+M|C-Grade\s+M|MNCHL\s+M|MNCHL\s+W|Div\s+1\s+W|Div\s+2\s+W|Div\s+3\s+W|Div\s+3\s+M|NSW)'
+    r'^\s*(?:(\d+)\s+)?'
+    r'(B-Grade\s+M|C-Grade\s+M|MNCHL\s+M|MNCHL\s+W|Div\s+1\s+W|Div\s+2\s+W|Div\s+3\s+W|Div\s+3\s+M|NSW)'
     r'\s+((?:March|April|May|June|July|August|September|October)\s+\d+(?:st|nd|rd|th))\s+BYE\s*(.*?)$'
 )
 
@@ -69,7 +71,7 @@ for line in raw_text.splitlines():
 
     m = ROW_RE.match(line)
     if m:
-        day, grade_raw, date_raw, time_raw, field_raw, team_a, team_b = m.groups()
+        round_raw, day, grade_raw, date_raw, time_raw, field_raw, team_a, team_b = m.groups()
         grade_raw = re.sub(r'\s+', ' ', (grade_raw or "").strip())
         
         if grade_raw == "Div 3 M":
@@ -90,8 +92,19 @@ for line in raw_text.splitlines():
             # Remove trailing umpire names — they appear after two or more spaces
             t = re.split(r'\s{3,}', t)[0].strip()
             return t if t else None
+            
+        team_b_parts = re.split(r'\s{3,}', team_b.strip())
+        team_b_clean = team_b_parts[0] if team_b_parts else None
+        
+        umpires_raw = [p.strip() for p in team_b_parts[1:] if p.strip() and p.strip() != '&']
+        umpires = []
+        for u in umpires_raw:
+            u = u.strip('&').strip()
+            if u and u != "UMPIRES":
+                umpires.append(u)
 
         match_obj = {
+            "round": int(round_raw) if round_raw else None,
             "day": day.strip(),
             "grade": grade_raw if grade_raw else None,
             "gender": KNOWN_GRADES.get(grade_raw, {}).get("gender"),
@@ -100,7 +113,8 @@ for line in raw_text.splitlines():
             "time": time_str,
             "field": field if field else None,
             "teamA": clean_team(team_a),
-            "teamB": clean_team(team_b),
+            "teamB": team_b_clean,
+            "umpires": umpires,
             "isBye": False,
         }
         # Only include rows where at least one team name is present
@@ -113,7 +127,7 @@ for line in raw_text.splitlines():
 
     b = BYE_RE.match(line)
     if b:
-        grade_raw, date_raw, bye_team = b.groups()
+        round_raw, grade_raw, date_raw, bye_team = b.groups()
         grade_raw = re.sub(r'\s+', ' ', (grade_raw or "").strip())
         
         if grade_raw == "Div 3 M":
@@ -125,6 +139,7 @@ for line in raw_text.splitlines():
             continue
             
         byes.append({
+            "round": int(round_raw) if round_raw else None,
             "grade": grade_raw.strip(),
             "gradeLabel": KNOWN_GRADES.get(grade_raw.strip(), {}).get("label", grade_raw.strip()),
             "gender": KNOWN_GRADES.get(grade_raw.strip(), {}).get("gender"),
@@ -136,6 +151,7 @@ for line in raw_text.splitlines():
 # Merge byes into matches list as synthetic "bye" entries
 for bye in byes:
     matches.append({
+        "round": bye.get("round"),
         "day": None,
         "grade": bye["grade"],
         "gender": bye["gender"],
@@ -145,6 +161,7 @@ for bye in byes:
         "field": None,
         "teamA": bye["team"],
         "teamB": "BYE",
+        "umpires": [],
         "isBye": True,
     })
 
