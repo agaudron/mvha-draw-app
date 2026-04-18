@@ -369,6 +369,23 @@
     {
       "round": 2,
       "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "March 28th",
+      "time": "2.30pm",
+      "field": "ATF",
+      "teamA": "Taree West",
+      "teamB": "Great Lakes Strikers",
+      "umpires": [
+        "Nathan Hamond (Chatham D3-W)",
+        "Anne Vaughan (Wingham D3-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 2,
+      "day": "Saturday",
       "grade": "MNCHL M",
       "gender": "Men",
       "gradeLabel": "MNCHL",
@@ -464,7 +481,7 @@
       "teamB": "Sharks",
       "umpires": [
         "Dom Tag (Taree West D3-W)",
-        "Dakota Sipek (Taree West D3-W)"
+        "Dakota sipek (Taree West D3-W)"
       ],
       "isBye": false
     },
@@ -652,7 +669,7 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Thomas Davy (Taree West D2-W)",
+        "Thomas Davy (TareeWest D2-W)",
         "Janene Watts (Tigers D1-W)"
       ],
       "isBye": false
@@ -872,6 +889,23 @@
     {
       "round": 4,
       "day": "Wednesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "April 8th",
+      "time": "6.30pm",
+      "field": "ATF",
+      "teamA": "Gloucester",
+      "teamB": "Cougars",
+      "umpires": [
+        "Frank Birkefeld (Chatham C-M)",
+        "Scott Bishop (Wingham C-M)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 4,
+      "day": "Wednesday",
       "grade": "Div 3 W",
       "gender": "Women",
       "gradeLabel": "Div 3",
@@ -900,6 +934,40 @@
       "umpires": [
         "Katrina Brown (Sharks D2-W)",
         "Kelly Northam (Chatham D2-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 4,
+      "day": "Wednesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "April 8th",
+      "time": "8.00pm",
+      "field": "ATF",
+      "teamA": "Chatham",
+      "teamB": "Tigers",
+      "umpires": [
+        "Bruce Snape (Gloucester C-M)",
+        "Michael C Green (Cougars C-M)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 4,
+      "day": "Wednesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "April 8th",
+      "time": "8.00pm",
+      "field": "TLF",
+      "teamA": "Wingham",
+      "teamB": "Sharks",
+      "umpires": [
+        "Tony Lewis (Tigers A-M)",
+        "Stephen George (Tigers D2-W)"
       ],
       "isBye": false
     },
@@ -951,6 +1019,23 @@
       "umpires": [
         "Janene Watts (Tigers D1-W)",
         "Gemma Turner (Chatham D1-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 4,
+      "day": "Thursday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "April 9th",
+      "time": "8.00pm",
+      "field": "ATF",
+      "teamA": "Sharks",
+      "teamB": "Cougars",
+      "umpires": [
+        "Dakota sipek (Taree West D3-W)",
+        "Nich Kennewell (Chatham D3-W)"
       ],
       "isBye": false
     },
@@ -1079,6 +1164,23 @@
       "isBye": false
     },
     {
+      "round": 5,
+      "day": "Friday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "April 17th",
+      "time": "8.00pm",
+      "field": "ATF",
+      "teamA": "Taree West",
+      "teamB": "Chatham",
+      "umpires": [
+        "Katrina Brown (Sharks D2-W)",
+        "Blake Chivas (Sharks D1-W)"
+      ],
+      "isBye": false
+    },
+    {
       "round": 6,
       "day": "Friday",
       "grade": "MNCHL M",
@@ -1125,7 +1227,7 @@
       "teamB": "Wingham",
       "umpires": [
         "Kelly Northam (Chatham D2-W)",
-        "Dakota Sipek (Taree West D3-W)"
+        "Dakota sipek (Taree West D3-W)"
       ],
       "isBye": false
     },
@@ -1143,6 +1245,23 @@
       "umpires": [
         "Bruce Snape (Gloucester C-M)",
         "Frank Birkefeld (Chatham C-M)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 5,
+      "day": "Saturday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "April 18th",
+      "time": "2.30pm",
+      "field": "TLF",
+      "teamA": "Wingham",
+      "teamB": "Tigers",
+      "umpires": [
+        "Jacob Clark (Tigers B-M)",
+        "Tony Lewis (Tigers A-M)"
       ],
       "isBye": false
     },
@@ -1333,6 +1452,23 @@
       "isBye": false
     },
     {
+      "round": 6,
+      "day": "Wednesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "April 22nd",
+      "time": "6.30pm",
+      "field": "ATF",
+      "teamA": "Chatham",
+      "teamB": "Wingham",
+      "umpires": [
+        "Dom Tag (Taree West D3-W)",
+        "Mal Yarnold (Sharks C-M)"
+      ],
+      "isBye": false
+    },
+    {
       "round": 4,
       "day": "Wednesday",
       "grade": "MNCHL W",
@@ -1346,6 +1482,23 @@
       "umpires": [
         "Blake Chivas (Sharks D1-W)",
         "Thomas Davy (TareeWest D2-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 6,
+      "day": "Wednesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "April 22nd",
+      "time": "6.30pm",
+      "field": "Field 3",
+      "teamA": "Tigers",
+      "teamB": "Cougars",
+      "umpires": [
+        "Bruce Snape (Gloucester C-M)",
+        "Nathan Hamond (Chatham D3-W)"
       ],
       "isBye": false
     },
@@ -1380,6 +1533,57 @@
       "umpires": [
         "Janene Watts (Tigers D1-W)",
         "Adam Birkefeld (Chatham D1-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 6,
+      "day": "Wednesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "April 22nd",
+      "time": "8.00pm",
+      "field": "Field 3",
+      "teamA": "Gloucester",
+      "teamB": "Sharks",
+      "umpires": [
+        "Frank Birkefeld (Chatham C-M)",
+        "Scott Bishop (Wingham C-M)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 6,
+      "day": "Thursday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "April 23rd",
+      "time": "6.30pm",
+      "field": "ATF",
+      "teamA": "Tigers",
+      "teamB": "Taree West",
+      "umpires": [
+        "Bronwyn Fuller (Sharks D3-W)",
+        "Anne Vaughan (Wingham D3-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 6,
+      "day": "Thursday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "April 23rd",
+      "time": "6.30pm",
+      "field": "TLF",
+      "teamA": "Sharks",
+      "teamB": "Wingham",
+      "umpires": [
+        "Larry Scavino (Chatham B-M)",
+        "Kerrie Reece (TareeWest D2-W)"
       ],
       "isBye": false
     },
@@ -1612,6 +1816,23 @@
     {
       "round": 7,
       "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "May 2nd",
+      "time": "2.30pm",
+      "field": "ATF",
+      "teamA": "Cougars",
+      "teamB": "Wingham",
+      "umpires": [
+        "Jane McNeill (GL Strikers D3-W)",
+        "Dom Tag (Taree West D3-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 7,
+      "day": "Saturday",
       "grade": "B-Grade M",
       "gender": "Men",
       "gradeLabel": "B-Grade",
@@ -1663,6 +1884,23 @@
     {
       "round": 7,
       "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "May 2nd",
+      "time": "5.30pm",
+      "field": "ATF",
+      "teamA": "Great Lakes Strikers",
+      "teamB": "Chatham",
+      "umpires": [
+        "Nicole Clark (Tigers D3-W)",
+        "Harley Bunyan (Cougars D3-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 7,
+      "day": "Saturday",
       "grade": "MNCHL M",
       "gender": "Men",
       "gradeLabel": "MNCHL",
@@ -1675,6 +1913,34 @@
         "Eamon Smith (Chatham A-M)",
         "Trent Hammond (Chatham A-M)"
       ],
+      "isBye": false
+    },
+    {
+      "round": 2,
+      "day": "Saturday",
+      "grade": "MNCHL W",
+      "gender": "Women",
+      "gradeLabel": "MNCHL",
+      "date": "May 2nd",
+      "time": "3.00pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 7,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "May 2nd",
+      "time": "4.30pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Sharks",
+      "umpires": [],
       "isBye": false
     },
     {
@@ -1906,6 +2172,23 @@
       "umpires": [
         "Scott Bishop (Wingham C-M)",
         "Mal Yarnold (Sharks C-M)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 8,
+      "day": "Saturday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "May 9th",
+      "time": "5.30pm",
+      "field": "ATF",
+      "teamA": "Chatham",
+      "teamB": "Tigers",
+      "umpires": [
+        "Kerrie Reece (TareeWest D2-W)",
+        "Katrina Brown (Sharks D2-W)"
       ],
       "isBye": false
     },
@@ -2188,6 +2471,34 @@
     },
     {
       "round": 5,
+      "day": "Saturday",
+      "grade": "MNCHL W",
+      "gender": "Women",
+      "gradeLabel": "MNCHL",
+      "date": "May 16th",
+      "time": "3.00pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Tigers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 10,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "May 16th",
+      "time": "4.30pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Tigers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 5,
       "day": null,
       "grade": "MNCHL W",
       "gender": "Women",
@@ -2311,6 +2622,23 @@
       "isBye": false
     },
     {
+      "round": 3,
+      "day": "Tuesday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "May 19th",
+      "time": "8.00pm",
+      "field": "TLF",
+      "teamA": "Taree West",
+      "teamB": "Tigers",
+      "umpires": [
+        "Trent Hammond (Chatham A-M)",
+        "Nathan Fuller (Sharks A-M)"
+      ],
+      "isBye": false
+    },
+    {
       "round": 24,
       "day": "Tuesday",
       "grade": "C-Grade M",
@@ -2340,6 +2668,40 @@
       "teamB": "BYE",
       "umpires": [],
       "isBye": true
+    },
+    {
+      "round": 10,
+      "day": "Friday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "May 22nd",
+      "time": "6.30pm",
+      "field": "ATF",
+      "teamA": "Taree West",
+      "teamB": "Chatham",
+      "umpires": [
+        "Brooke Sheldon (Sharks B-M)",
+        "Stephen George (Tigers D2-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 11,
+      "day": "Friday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "May 22nd",
+      "time": "6.30pm",
+      "field": "TLF",
+      "teamA": "Sharks",
+      "teamB": "Chatham",
+      "umpires": [
+        "Tony Lewis (Tigers A-M)",
+        "Leo Allan (Taree West A-M)"
+      ],
+      "isBye": false
     },
     {
       "round": 10,
@@ -2446,6 +2808,23 @@
     {
       "round": 10,
       "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "May 23rd",
+      "time": "2.30pm",
+      "field": "Field 3",
+      "teamA": "Tigers",
+      "teamB": "Cougars",
+      "umpires": [
+        "Anne Vaughan (Wingham D3-W)",
+        "Bronwyn Fuller (Sharks D3-W)"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 10,
+      "day": "Saturday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -2492,6 +2871,34 @@
         "Damon Hoole (Tigers D3-W)",
         "Harley Bunyan (Cougars D3-W)"
       ],
+      "isBye": false
+    },
+    {
+      "round": 11,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "May 23rd",
+      "time": "3.00pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 6,
+      "day": "Saturday",
+      "grade": "MNCHL W",
+      "gender": "Women",
+      "gradeLabel": "MNCHL",
+      "date": "May 23rd",
+      "time": "4.30pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Taree West",
+      "umpires": [],
       "isBye": false
     },
     {
@@ -2894,6 +3301,20 @@
     {
       "round": 12,
       "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "June 13th",
+      "time": "2.30pm",
+      "field": "Field 3",
+      "teamA": "Wingham",
+      "teamB": "Tigers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 12,
+      "day": "Saturday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -2930,6 +3351,34 @@
       "field": "Field 3",
       "teamA": "Sharks",
       "teamB": "Great Lakes Strikers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 8,
+      "day": "Saturday",
+      "grade": "MNCHL W",
+      "gender": "Women",
+      "gradeLabel": "MNCHL",
+      "date": "June 13th",
+      "time": "3.00pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Chatham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 13,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "June 13th",
+      "time": "4.30pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Chatham",
       "umpires": [],
       "isBye": false
     },
@@ -3158,6 +3607,23 @@
       "isBye": false
     },
     {
+      "round": null,
+      "day": "Saturday",
+      "grade": "Taree M",
+      "gender": "Men",
+      "gradeLabel": "Exhibition",
+      "date": "June 20th",
+      "time": "4.00pm",
+      "field": "TLF",
+      "teamA": "Newcastle Tigers",
+      "teamB": "Wests Newcastle",
+      "umpires": [
+        "Newcastle Men's",
+        "Division 1 Men's"
+      ],
+      "isBye": false
+    },
+    {
       "round": 13,
       "day": "Saturday",
       "grade": "C-Grade M",
@@ -3169,6 +3635,23 @@
       "teamA": "Cougars",
       "teamB": "Wingham",
       "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": null,
+      "day": "Saturday",
+      "grade": "Taree M",
+      "gender": "Men",
+      "gradeLabel": "Exhibition",
+      "date": "June 20th",
+      "time": "5.30pm",
+      "field": "TLF",
+      "teamA": "Newcastle Tigers",
+      "teamB": "Wests Newcastle",
+      "umpires": [
+        "Newcastle Men's",
+        "Premier League"
+      ],
       "isBye": false
     },
     {
@@ -3578,6 +4061,20 @@
       "isBye": false
     },
     {
+      "round": 15,
+      "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "July 4th",
+      "time": "2.30pm",
+      "field": "ATF",
+      "teamA": "Great Lakes Strikers",
+      "teamB": "Wingham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
       "round": 16,
       "day": "Saturday",
       "grade": "MNCHL M",
@@ -3630,6 +4127,34 @@
       "field": "TLF",
       "teamA": "Chatham",
       "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 16,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "July 4th",
+      "time": "3.00pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 11,
+      "day": "Saturday",
+      "grade": "MNCHL W",
+      "gender": "Women",
+      "gradeLabel": "MNCHL",
+      "date": "July 4th",
+      "time": "4.30pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Taree West",
       "umpires": [],
       "isBye": false
     },
@@ -3826,6 +4351,34 @@
       "field": "TLF",
       "teamA": "Sharks",
       "teamB": "Tacking Point Thunder",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 16,
+      "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "July 11th",
+      "time": "2.30pm",
+      "field": "Field 3",
+      "teamA": "Great Lakes Strikers",
+      "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 16,
+      "day": "Saturday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "July 11th",
+      "time": "4.00pm",
+      "field": "ATF",
+      "teamA": "Tigers",
+      "teamB": "Taree West",
       "umpires": [],
       "isBye": false
     },
@@ -4064,6 +4617,20 @@
       "field": "TLF",
       "teamA": "Chatham",
       "teamB": "Tacking Point Thunder",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 17,
+      "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "July 18th",
+      "time": "4.00pm",
+      "field": "Field 3",
+      "teamA": "Cougars",
+      "teamB": "Tigers",
       "umpires": [],
       "isBye": false
     },
@@ -4490,6 +5057,20 @@
     {
       "round": 23,
       "day": "Sunday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "July 26th",
+      "time": "1.30pm",
+      "field": "Field 3",
+      "teamA": "Taree West",
+      "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 23,
+      "day": "Sunday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -4602,6 +5183,34 @@
     {
       "round": 19,
       "day": "Saturday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "August 1st",
+      "time": "2.30pm",
+      "field": "ATF",
+      "teamA": "Sharks",
+      "teamB": "Chatham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 20,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 1st",
+      "time": "2.30pm",
+      "field": "TLF",
+      "teamA": "Chatham",
+      "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 19,
+      "day": "Saturday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -4652,6 +5261,34 @@
       "field": "Field 3",
       "teamA": "Gloucester",
       "teamB": "Cougars",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 15,
+      "day": "Saturday",
+      "grade": "MNCHL W",
+      "gender": "Women",
+      "gradeLabel": "MNCHL",
+      "date": "August 1st",
+      "time": "3.00pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Tigers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 20,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 1st",
+      "time": "4.30pm",
+      "field": "Port",
+      "teamA": "Tacking Point Thunder",
+      "teamB": "Tigers",
       "umpires": [],
       "isBye": false
     },
@@ -4784,6 +5421,20 @@
     {
       "round": 20,
       "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "August 8th",
+      "time": "1.00pm",
+      "field": "TLF",
+      "teamA": "Tigers",
+      "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 20,
+      "day": "Saturday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -4838,48 +5489,6 @@
       "isBye": false
     },
     {
-      "round": null,
-      "day": "Saturday",
-      "grade": "MNCHL M",
-      "gender": "Men",
-      "gradeLabel": "MNCHL",
-      "date": "August 8th",
-      "time": "4.00pm",
-      "field": "TLF",
-      "teamA": "MID NORTH COAST",
-      "teamB": "HOCKEY LEAGUE",
-      "umpires": [],
-      "isBye": false
-    },
-    {
-      "round": null,
-      "day": "Saturday",
-      "grade": "MNCHL W",
-      "gender": "Women",
-      "gradeLabel": "MNCHL",
-      "date": "August 8th",
-      "time": "2.30pm",
-      "field": "Port",
-      "teamA": "MID NORTH COAST",
-      "teamB": "HOCKEY LEAGUE",
-      "umpires": [],
-      "isBye": false
-    },
-    {
-      "round": null,
-      "day": "Saturday",
-      "grade": "MNCHL M",
-      "gender": "Men",
-      "gradeLabel": "MNCHL",
-      "date": "August 8th",
-      "time": "4.00pm",
-      "field": "Port",
-      "teamA": "MID NORTH COAST",
-      "teamB": "HOCKEY LEAGUE",
-      "umpires": [],
-      "isBye": false
-    },
-    {
       "round": 20,
       "day": null,
       "grade": "Div 2 W",
@@ -4924,6 +5533,20 @@
     {
       "round": 21,
       "day": "Friday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 14th",
+      "time": "6.30pm",
+      "field": "TLF",
+      "teamA": "Sharks",
+      "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 21,
+      "day": "Friday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -4946,6 +5569,20 @@
       "field": "ATF",
       "teamA": "Tigers",
       "teamB": "Taree West",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 21,
+      "day": "Friday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 14th",
+      "time": "8.00pm",
+      "field": "TLF",
+      "teamA": "Tigers",
+      "teamB": "Chatham",
       "umpires": [],
       "isBye": false
     },
@@ -5001,6 +5638,20 @@
       "time": "2.30pm",
       "field": "ATF",
       "teamA": "Chatham",
+      "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 21,
+      "day": "Saturday",
+      "grade": "Div 1 W",
+      "gender": "Women",
+      "gradeLabel": "Div 1",
+      "date": "August 15th",
+      "time": "2.30pm",
+      "field": "TLF",
+      "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [],
       "isBye": false
@@ -5088,6 +5739,90 @@
       "teamB": "BYE",
       "umpires": [],
       "isBye": true
+    },
+    {
+      "round": 25,
+      "day": "Tuesday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "August 18th",
+      "time": "6.30pm",
+      "field": "ATF",
+      "teamA": "Wingham",
+      "teamB": "Tigers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 25,
+      "day": "Tuesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "August 18th",
+      "time": "6.30pm",
+      "field": "TLF",
+      "teamA": "Gloucester",
+      "teamB": "Wingham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 25,
+      "day": "Tuesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "August 18th",
+      "time": "6.30pm",
+      "field": "Field 3",
+      "teamA": "Tigers",
+      "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 25,
+      "day": "Tuesday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "August 18th",
+      "time": "8.00pm",
+      "field": "ATF",
+      "teamA": "Taree West",
+      "teamB": "Chatham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 3,
+      "day": "Tuesday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 18th",
+      "time": "8.00pm",
+      "field": "TLF",
+      "teamA": "Chatham",
+      "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 25,
+      "day": "Tuesday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "August 18th",
+      "time": "8.00pm",
+      "field": "TLF",
+      "teamA": "Chatham",
+      "teamB": "Cougars",
+      "umpires": [],
+      "isBye": false
     },
     {
       "round": 25,
@@ -5230,6 +5965,62 @@
       "isBye": false
     },
     {
+      "round": 22,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 22nd",
+      "time": "2.30pm",
+      "field": "TLF",
+      "teamA": "Taree West",
+      "teamB": "Chatham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 11,
+      "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "August 22nd",
+      "time": "2.30pm",
+      "field": "Field 3",
+      "teamA": "Sharks",
+      "teamB": "Cougars",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 22,
+      "day": "Saturday",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
+      "date": "August 22nd",
+      "time": "4.00pm",
+      "field": "ATF",
+      "teamA": "Wingham",
+      "teamB": "Chatham",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 22,
+      "day": "Saturday",
+      "grade": "MNCHL M",
+      "gender": "Men",
+      "gradeLabel": "MNCHL",
+      "date": "August 22nd",
+      "time": "4.00pm",
+      "field": "TLF",
+      "teamA": "Tigers",
+      "teamB": "Sharks",
+      "umpires": [],
+      "isBye": false
+    },
+    {
       "round": 11,
       "day": "Saturday",
       "grade": "Div 3 W",
@@ -5328,6 +6119,11 @@
       "key": "NSW",
       "label": "NSW",
       "gender": "Mixed"
+    },
+    {
+      "key": "Taree M",
+      "label": "Exhibition",
+      "gender": "Men"
     }
   ]
 }
