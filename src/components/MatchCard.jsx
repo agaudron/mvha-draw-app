@@ -27,6 +27,7 @@ export default function MatchCard({ match, index, selectedTeam, selectedUmpire, 
     // Map team names that might have extra text/umpire info from the PDF or variations
     // to their actual logo filename.
     const lower = name.toLowerCase()
+    if (lower.includes('newcastle')) return null
     if (lower.includes('chatham')) return 'Chatham.jpg'
     if (lower.includes('cougars')) return 'Cougars.jpg'
     if (lower.includes('gloucester')) return 'Gloucester.jpg'

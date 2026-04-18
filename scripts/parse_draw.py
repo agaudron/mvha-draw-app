@@ -38,6 +38,7 @@ KNOWN_GRADES = {
     "Div 3 M":   {"label": "Div 3",   "gender": "Women"},
     "MNCHL W":   {"label": "MNCHL",   "gender": "Women"},
     "NSW":       {"label": "NSW",      "gender": "Mixed"},
+    "Taree M":   {"label": "Exhibition", "gender": "Men"},
 }
 
 # Regex to match a main draw row. The layout-preserved text keeps columns aligned.
@@ -46,33 +47,50 @@ KNOWN_GRADES = {
 ROW_RE = re.compile(
     r'^\s*(?:(\d+)\s+)?'
     r'(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
-    r'\s+(B-Grade\s+M|C-Grade\s+M|MNCHL\s+M|MNCHL\s+W|Div\s+1\s+W|Div\s+2\s+W|Div\s+3\s+W|Div\s+3\s+M|NSW)?'
+    r'\s*(A-Grade\s*M|A-Grade\s*W|B-Grade\s*M|C-Grade\s*M|MNCHL\s*M|MNCHL\s*W|Port\s*W|Port\s*M|Taree\s*M|Div\s+1\s*W|Div\s+2\s*W|Div\s+3\s*W|Div\s+3\s*M|NSW)?'
     r'\s+((?:March|April|May|June|July|August|September|October)\s+\d+(?:st|nd|rd|th))'
     r'\s+(\d+\.\d+(?:am|pm)?)'
     r'\s+(ATF|TLF|Field 3|Port|TLF_EAST)?'
-    r'\s+(.*?)\s+V\s+(.*?)$'
+    r'\s+(.*?)(?:\s+V\s+|\s{4,})(.*?)$'
 )
 
 BYE_RE = re.compile(
     r'^\s*(?:(\d+)\s+)?'
-    r'(B-Grade\s+M|C-Grade\s+M|MNCHL\s+M|MNCHL\s+W|Div\s+1\s+W|Div\s+2\s+W|Div\s+3\s+W|Div\s+3\s+M|NSW)'
+    r'(A-Grade\s*M|A-Grade\s*W|B-Grade\s*M|C-Grade\s*M|MNCHL\s*M|MNCHL\s*W|Port\s*W|Port\s*M|Taree\s*M|Div\s+1\s*W|Div\s+2\s*W|Div\s+3\s*W|Div\s+3\s*M|NSW)'
     r'\s+((?:March|April|May|June|July|August|September|October)\s+\d+(?:st|nd|rd|th))\s+BYE\s*(.*?)$'
 )
 
 matches = []
 byes = []
 
-for line in raw_text.splitlines():
+lines = raw_text.splitlines()
+i = 0
+while i < len(lines):
+    line = lines[i]
+    if re.match(r'^\s*(\d+)?\s*(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*[a-zA-Z]*\s*$', line) and i + 1 < len(lines):
+        merged = line + " " + lines[i+1]
+        merged = re.sub(r'W\s+(Div \d+)', r'\1 W', merged)
+        lines[i] = merged
+        lines[i+1] = ""
+    i += 1
+
+for line in lines:
     # Skip page headers / notes
     if "Manning Valley" in line or "Please note" in line or not line.strip():
         continue
-    if "Midweek" in line or "MIDWEEK" in line or "Under 14" in line or "State Champ" in line:
+    if "Midweek" in line or "MIDWEEK" in line or "Under 14" in line or "State Champ" in line or "Using TLF" in line or "Final" in line or "FINAL" in line:
         continue
 
-    m = ROW_RE.match(line)
-    if m:
-        round_raw, day, grade_raw, date_raw, time_raw, field_raw, team_a, team_b = m.groups()
-        grade_raw = re.sub(r'\s+', ' ', (grade_raw or "").strip())
+    m_row = ROW_RE.match(line)
+    if m_row:
+        round_raw, day, grade_raw, date_raw, time_raw, field_raw, team_a, team_b = m_row.groups()
+        if grade_raw:
+            grade_raw = re.sub(r'\s+', ' ', grade_raw).strip()
+            grade_raw = re.sub(r'(Div [123])([MW])', r'\1 \2', grade_raw)
+            grade_raw = re.sub(r'(Grade)([MW])', r'\1 \2', grade_raw)
+            grade_raw = re.sub(r'(MNCHL|Port|Taree)([MW])', r'\1 \2', grade_raw)
+            grade_raw = grade_raw.replace("Port W", "MNCHL W").replace("Port M", "MNCHL M")
+            grade_raw = grade_raw.replace("A-Grade W", "MNCHL W").replace("A-Grade M", "MNCHL M")
         
         if grade_raw == "Div 3 M":
             grade_raw = "Div 3 W"
@@ -117,23 +135,34 @@ for line in raw_text.splitlines():
             "umpires": umpires,
             "isBye": False,
         }
-        # Only include rows where at least one team name is present
+        # Require both teams to be present and not be rogue 'V' characters
+        if not match_obj["teamA"] or not match_obj["teamB"]:
+            continue
+        if match_obj["teamA"].strip() == "V" or match_obj["teamB"].strip() == "V":
+            continue
         if match_obj["teamA"] == "TBA" or match_obj["teamB"] == "TBA":
             continue
+        if "SUPER" in match_obj["teamA"].upper():
+            continue
             
-        if match_obj["teamA"] or match_obj["teamB"]:
-            matches.append(match_obj)
+        matches.append(match_obj)
         continue
 
-    b = BYE_RE.match(line)
-    if b:
-        round_raw, grade_raw, date_raw, bye_team = b.groups()
-        grade_raw = re.sub(r'\s+', ' ', (grade_raw or "").strip())
+    m_bye = BYE_RE.match(line)
+    if m_bye:
+        round_raw, grade_raw, date_raw, team_raw = m_bye.groups()
+        if grade_raw:
+            grade_raw = re.sub(r'\s+', ' ', grade_raw).strip()
+            grade_raw = re.sub(r'(Div [123])([MW])', r'\1 \2', grade_raw)
+            grade_raw = re.sub(r'(Grade)([MW])', r'\1 \2', grade_raw)
+            grade_raw = re.sub(r'(MNCHL|Port|Taree)([MW])', r'\1 \2', grade_raw)
+            grade_raw = grade_raw.replace("Port W", "MNCHL W").replace("Port M", "MNCHL M")
+            grade_raw = grade_raw.replace("A-Grade W", "MNCHL W").replace("A-Grade M", "MNCHL M")
         
         if grade_raw == "Div 3 M":
             grade_raw = "Div 3 W"
             
-        team_name = bye_team.strip() if bye_team and bye_team.strip() else "TBA"
+        team_name = team_raw.strip() if team_raw and team_raw.strip() else "TBA"
         
         if team_name == "TBA":
             continue
