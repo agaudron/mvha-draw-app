@@ -131,6 +131,7 @@ export default function App() {
   // EASTER EGG STATE
   const [seasonClicks, setSeasonClicks] = useState(0)
   const [showDoom, setShowDoom] = useState(false)
+  const [showWarning, setShowWarning] = useState(true)
 
   const handleSeasonClick = () => {
     if (seasonClicks + 1 >= 7) {
@@ -231,6 +232,48 @@ export default function App() {
 
   return (
     <div className="app">
+      {showWarning && (
+        <div style={{
+          position: 'fixed',
+          bottom: '24px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: '#ef4444',
+          color: '#ffffff',
+          padding: '12px 24px',
+          borderRadius: 'var(--radius-md)',
+          boxShadow: 'var(--shadow-card)',
+          zIndex: 1000,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '16px',
+          fontWeight: '500',
+          fontSize: '0.95rem',
+          maxWidth: '90vw',
+          textAlign: 'center',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
+        }}>
+          <span>
+            ⚠️ Draw has not been updated with the latest 7th May Update. <a href={`${import.meta.env.BASE_URL}7th_May_Update.pdf`} target="_blank" rel="noopener noreferrer" style={{color: '#ffffff', textDecoration: 'underline', fontWeight: 'bold'}}>Latest PDF Here</a>.
+          </span>
+          <button 
+            onClick={() => setShowWarning(false)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#ffffff',
+              cursor: 'pointer',
+              fontSize: '20px',
+              padding: '0 4px',
+              opacity: 0.8,
+              lineHeight: 1
+            }}
+            title="Dismiss"
+          >
+            ×
+          </button>
+        </div>
+      )}
       {showTeamsModal && (
         <TeamsModal
           onClose={() => setShowTeamsModal(false)}
