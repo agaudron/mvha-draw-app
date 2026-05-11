@@ -13,8 +13,8 @@
       "teamA": "Sharks",
       "teamB": "Taree West",
       "umpires": [
-        "Larry Scavino (Chatham B-M)",
-        "Jacob Clark (Tigers B-M)"
+        "Larry Scavino",
+        "Jacob Clark"
       ],
       "isBye": false
     },
@@ -30,8 +30,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Blake Chivas (Sharks D1-W)",
-        "Thomas Davy (Taree West D1-W)"
+        "Blake Chivas",
+        "Thomas Davy"
       ],
       "isBye": false
     },
@@ -47,8 +47,8 @@
       "teamA": "Great Lakes Strikers",
       "teamB": "Wingham",
       "umpires": [
-        "Nich Kennewell (Chatham D3-W)",
-        "Damon Hoole (Tigers D3-W)"
+        "Nick Kennewell",
+        "Damon Hoole"
       ],
       "isBye": false
     },
@@ -64,8 +64,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Brooke Sheldon (Sharks B-M)",
-        "Deb Monck (Taree West B-M)"
+        "Brooke Sheldon",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -81,8 +81,8 @@
       "teamA": "Sharks",
       "teamB": "Taree West",
       "umpires": [
-        "Janene Watts (Tigers D1-W)",
-        "Adam Birkefeld (Chatham D1-W)"
+        "Janene Watts",
+        "Adam Birkefeld"
       ],
       "isBye": false
     },
@@ -98,8 +98,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Jane McNeill (GL Strikers D3-W)",
-        "Anne Vaughan (Wingham D3-W)"
+        "Jane McNeill",
+        "Anne Vaughan"
       ],
       "isBye": false
     },
@@ -115,8 +115,8 @@
       "teamA": "Chatham",
       "teamB": "Wingham",
       "umpires": [
-        "Jay Quince (Tigers C-M)",
-        "Michael C Green (Cougars C-M)"
+        "Jay Quince",
+        "Michael C Green"
       ],
       "isBye": false
     },
@@ -132,8 +132,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Leo Allan (Taree West A-M)",
-        "Tony Lewis (Tigers A-M)"
+        "Leo Allan",
+        "Tony Lewis"
       ],
       "isBye": false
     },
@@ -149,8 +149,8 @@
       "teamA": "Chatham",
       "teamB": "Tigers",
       "umpires": [
-        "Kerrie Reece (TareeWest D2-W)",
-        "Katrina Brown (Sharks D2-W)"
+        "Kerrie Reece",
+        "Katrina Brown"
       ],
       "isBye": false
     },
@@ -166,8 +166,8 @@
       "teamA": "Tigers",
       "teamB": "Cougars",
       "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Scott Bishop (Wingham C-M)"
+        "Frank Birkefeld",
+        "Scott Bishop"
       ],
       "isBye": false
     },
@@ -183,8 +183,8 @@
       "teamA": "Taree West",
       "teamB": "Tacking Point Thunder",
       "umpires": [
-        "Nathan Fuller (Sharks A-M)",
-        "Eamon Smith (Chatham A-M)"
+        "Nathan Fuller",
+        "Eamon Smith"
       ],
       "isBye": false
     },
@@ -200,8 +200,8 @@
       "teamA": "Taree West",
       "teamB": "Sharks",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Terry Bourke (Chatham D2-W)"
+        "Bruce Snape",
+        "Terry Bourke"
       ],
       "isBye": false
     },
@@ -217,8 +217,8 @@
       "teamA": "Gloucester",
       "teamB": "Sharks",
       "umpires": [
-        "Dom Tag (Taree West D3-W)",
-        "Nathan Hamond (Chatham D3-W)"
+        "Dom Tag",
+        "Nathan Hamond"
       ],
       "isBye": false
     },
@@ -234,8 +234,8 @@
       "teamA": "Cougars",
       "teamB": "Taree West",
       "umpires": [
-        "Stephen George (Tigers D2-W)",
-        "Mal Yarnold (Sharks C-M)"
+        "Stephen George",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -293,8 +293,8 @@
       "teamA": "Wingham",
       "teamB": "Tigers",
       "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Nich Kennewell (Chatham D3-W)"
+        "Frank Birkefeld",
+        "Nick Kennewell"
       ],
       "isBye": false
     },
@@ -310,8 +310,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Kate Neilson (Wingham D2-W)"
+        "Katrina Brown",
+        "Kate Neilson"
       ],
       "isBye": false
     },
@@ -327,8 +327,8 @@
       "teamA": "Taree West",
       "teamB": "Chatham",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Jacob Clark",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
@@ -344,8 +344,8 @@
       "teamA": "Sharks",
       "teamB": "Wingham",
       "umpires": [
-        "Nicole Clark (Tigers D3-W)",
-        "Kerrie Reece (TareeWest D2-W)"
+        "Nicole Clark",
+        "Kerrie Reece"
       ],
       "isBye": false
     },
@@ -361,8 +361,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Deb Monck (Taree West B-M)",
-        "Larry Scavino (Chatham B-M)"
+        "Deb Monck",
+        "Larry Scavino"
       ],
       "isBye": false
     },
@@ -378,8 +378,8 @@
       "teamA": "Taree West",
       "teamB": "Great Lakes Strikers",
       "umpires": [
-        "Nathan Hamond (Chatham D3-W)",
-        "Anne Vaughan (Wingham D3-W)"
+        "Nathan Hamond",
+        "Anne Vaughan"
       ],
       "isBye": false
     },
@@ -395,8 +395,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Eamon Smith (Chatham A-M)",
-        "Trent Hammond (Chatham A-M)"
+        "Eamon Smith",
+        "Trent Hammond"
       ],
       "isBye": false
     },
@@ -412,8 +412,8 @@
       "teamA": "Taree West",
       "teamB": "Chatham",
       "umpires": [
-        "Janene Watts (Tigers D1-W)",
-        "Blake Chivas (Sharks D1-W)"
+        "Janene Watts",
+        "Blake Chivas"
       ],
       "isBye": false
     },
@@ -429,8 +429,8 @@
       "teamA": "Wingham",
       "teamB": "Chatham",
       "umpires": [
-        "Harley Bunyan (Cougars D3-W)",
-        "Jane McNeill (GL Strikers D3-W)"
+        "Harley Bunyan",
+        "Jane McNeill"
       ],
       "isBye": false
     },
@@ -446,8 +446,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Thomas Davy (TareeWest D2-W)",
-        "Gemma Turner (Chatham D1-W)"
+        "Thomas Davy",
+        "Gemma Turner"
       ],
       "isBye": false
     },
@@ -463,8 +463,8 @@
       "teamA": "Gloucester",
       "teamB": "Chatham",
       "umpires": [
-        "Michael C Green (Cougars C-M)",
-        "Mal Yarnold (Sharks C-M)"
+        "Michael C Green",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -480,8 +480,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Dom Tag (Taree West D3-W)",
-        "Dakota sipek (Taree West D3-W)"
+        "Dom Tag",
+        "Dakota Sipek"
       ],
       "isBye": false
     },
@@ -497,8 +497,8 @@
       "teamA": "Cougars",
       "teamB": "Sharks",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Mark Styles (Chatham C-M)"
+        "Bruce Snape",
+        "Mark Styles"
       ],
       "isBye": false
     },
@@ -584,8 +584,8 @@
       "teamA": "Wingham",
       "teamB": "Chatham",
       "umpires": [
-        "Nicole Clark (Tigers D3-W)",
-        "Katrina Brown (Sharks D2-W)"
+        "Nicole Clark",
+        "Katrina Brown"
       ],
       "isBye": false
     },
@@ -601,8 +601,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Kate Neilson (Wingham D2-W)",
-        "Kelly Northam (Chatham D2-W)"
+        "Kate Neilson",
+        "Kelly Northam"
       ],
       "isBye": false
     },
@@ -618,8 +618,8 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Harley Bunyan (Cougars D3-W)",
-        "Stephen George (Tigers D2-W)"
+        "Harley Bunyan",
+        "Stephen George"
       ],
       "isBye": false
     },
@@ -635,8 +635,8 @@
       "teamA": "Taree West",
       "teamB": "Tigers",
       "umpires": [
-        "Adam Birkefeld (Chatham D1-W)",
-        "Blake Chivas (Sharks D1-W)"
+        "Adam Birkefeld",
+        "Blake Chivas"
       ],
       "isBye": false
     },
@@ -652,8 +652,8 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Deb Monck (Taree West B-M)",
-        "Jacob Clark (Tigers B-M)"
+        "Deb Monck",
+        "Jacob Clark"
       ],
       "isBye": false
     },
@@ -669,8 +669,8 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Thomas Davy (TareeWest D2-W)",
-        "Janene Watts (Tigers D1-W)"
+        "Thomas Davy",
+        "Janene Watts"
       ],
       "isBye": false
     },
@@ -686,8 +686,8 @@
       "teamA": "Cougars",
       "teamB": "Tigers",
       "umpires": [
-        "Nich Kennewell (Chatham D3-W)",
-        "Bronwyn Fuller (Sharks D3-W)"
+        "Nick Kennewell",
+        "Bronwyn Fuller"
       ],
       "isBye": false
     },
@@ -703,8 +703,8 @@
       "teamA": "Taree West",
       "teamB": "Tigers",
       "umpires": [
-        "Larry Scavino (Chatham B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Larry Scavino",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
@@ -720,8 +720,8 @@
       "teamA": "Taree West",
       "teamB": "Wingham",
       "umpires": [
-        "Michael C Green (Cougars C-M)",
-        "Nathan Hamond (Chatham D3-W)"
+        "Michael C Green",
+        "Nathan Hamond"
       ],
       "isBye": false
     },
@@ -737,8 +737,8 @@
       "teamA": "Taree West",
       "teamB": "Sharks",
       "umpires": [
-        "Trent Hammond (Chatham A-M)",
-        "Tony Lewis (Tigers A-M)"
+        "Trent Hammond",
+        "Tony Lewis"
       ],
       "isBye": false
     },
@@ -754,8 +754,8 @@
       "teamA": "Tigers",
       "teamB": "Gloucester",
       "umpires": [
-        "Mal Yarnold (Sharks C-M)",
-        "Mark Styles (Chatham C-M)"
+        "Mal Yarnold",
+        "Mark Styles"
       ],
       "isBye": false
     },
@@ -771,8 +771,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Dom Tag (Taree West D3-W)",
-        "Damon Hoole (Tigers D3-W)"
+        "Dom Tag",
+        "Damon Hoole"
       ],
       "isBye": false
     },
@@ -788,8 +788,8 @@
       "teamA": "Chatham",
       "teamB": "Tigers",
       "umpires": [
-        "Leo Allan (Taree West A-M)",
-        "Nathan Fuller (Sharks A-M)"
+        "Leo Allan",
+        "Nathan Fuller"
       ],
       "isBye": false
     },
@@ -805,8 +805,8 @@
       "teamA": "Cougars",
       "teamB": "Wingham",
       "umpires": [
-        "Jay Quince (Tigers C-M)",
-        "Bruce Snape (Gloucester C-M)"
+        "Jay Quince",
+        "Bruce Snape"
       ],
       "isBye": false
     },
@@ -864,8 +864,8 @@
       "teamA": "Taree West",
       "teamB": "Sharks",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Adam Johnson (Chatham B-M)"
+        "Jacob Clark",
+        "Adam Johnson"
       ],
       "isBye": false
     },
@@ -881,8 +881,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Deb Monck (Taree West B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Deb Monck",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
@@ -898,8 +898,8 @@
       "teamA": "Gloucester",
       "teamB": "Cougars",
       "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Scott Bishop (Wingham C-M)"
+        "Frank Birkefeld",
+        "Scott Bishop"
       ],
       "isBye": false
     },
@@ -915,8 +915,8 @@
       "teamA": "Tigers",
       "teamB": "Great Lakes Strikers",
       "umpires": [
-        "Mark Styles (Chatham C-M)",
-        "Dom Tag (Taree West D3-W)"
+        "Mark Styles",
+        "Dom Tag"
       ],
       "isBye": false
     },
@@ -932,8 +932,8 @@
       "teamA": "Wingham",
       "teamB": "Taree West",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Kelly Northam (Chatham D2-W)"
+        "Katrina Brown",
+        "Kelly Northam"
       ],
       "isBye": false
     },
@@ -949,8 +949,8 @@
       "teamA": "Chatham",
       "teamB": "Tigers",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Michael C Green (Cougars C-M)"
+        "Bruce Snape",
+        "Michael C Green"
       ],
       "isBye": false
     },
@@ -966,8 +966,8 @@
       "teamA": "Wingham",
       "teamB": "Sharks",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Stephen George (Tigers D2-W)"
+        "Tony Lewis",
+        "Stephen George"
       ],
       "isBye": false
     },
@@ -983,8 +983,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Kate Neilson (Wingham D2-W)",
-        "Kerrie Reece (TareeWest D2-W)"
+        "Kate Neilson",
+        "Kerrie Reece"
       ],
       "isBye": false
     },
@@ -1000,8 +1000,8 @@
       "teamA": "Taree West",
       "teamB": "Chatham",
       "umpires": [
-        "Bronwyn Fuller (Sharks D3-W)",
-        "Harley Bunyan (Cougars D3-W)"
+        "Bronwyn Fuller",
+        "Harley Bunyan"
       ],
       "isBye": false
     },
@@ -1017,8 +1017,8 @@
       "teamA": "Taree West",
       "teamB": "Sharks",
       "umpires": [
-        "Janene Watts (Tigers D1-W)",
-        "Gemma Turner (Chatham D1-W)"
+        "Janene Watts",
+        "Gemma Turner"
       ],
       "isBye": false
     },
@@ -1034,8 +1034,8 @@
       "teamA": "Sharks",
       "teamB": "Cougars",
       "umpires": [
-        "Dakota sipek (Taree West D3-W)",
-        "Nich Kennewell (Chatham D3-W)"
+        "Dakota Sipek",
+        "Nick Kennewell"
       ],
       "isBye": false
     },
@@ -1051,8 +1051,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Eamon Smith (Chatham A-M)",
-        "Leo Allan (Taree West A-M)"
+        "Eamon Smith",
+        "Leo Allan"
       ],
       "isBye": false
     },
@@ -1068,8 +1068,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Thomas Davy (TareeWest D2-W)",
-        "Blake Chivas (Sharks D1-W)"
+        "Thomas Davy",
+        "Blake Chivas"
       ],
       "isBye": false
     },
@@ -1141,8 +1141,8 @@
       "teamA": "Chatham",
       "teamB": "Taree West",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Jacob Clark",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
@@ -1158,8 +1158,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Thomas Davy (TareeWest D2-W)",
-        "Janene Watts (Tigers D1-W)"
+        "Thomas Davy",
+        "Janene Watts"
       ],
       "isBye": false
     },
@@ -1175,8 +1175,8 @@
       "teamA": "Taree West",
       "teamB": "Chatham",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Blake Chivas (Sharks D1-W)"
+        "Katrina Brown",
+        "Blake Chivas"
       ],
       "isBye": false
     },
@@ -1192,8 +1192,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Leo Allan (Taree West A-M)"
+        "Tony Lewis",
+        "Leo Allan"
       ],
       "isBye": false
     },
@@ -1209,8 +1209,8 @@
       "teamA": "Chatham",
       "teamB": "Cougars",
       "umpires": [
-        "Mal Yarnold (Sharks C-M)",
-        "Nich Kennewell (Chatham D3-W)"
+        "Mal Yarnold",
+        "Nick Kennewell"
       ],
       "isBye": false
     },
@@ -1226,8 +1226,8 @@
       "teamA": "Tigers",
       "teamB": "Wingham",
       "umpires": [
-        "Kelly Northam (Chatham D2-W)",
-        "Dakota sipek (Taree West D3-W)"
+        "Kelly Northam",
+        "Dakota Sipek"
       ],
       "isBye": false
     },
@@ -1243,8 +1243,8 @@
       "teamA": "Sharks",
       "teamB": "Tigers",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Frank Birkefeld (Chatham C-M)"
+        "Bruce Snape",
+        "Frank Birkefeld"
       ],
       "isBye": false
     },
@@ -1260,8 +1260,8 @@
       "teamA": "Wingham",
       "teamB": "Tigers",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Tony Lewis (Tigers A-M)"
+        "Jacob Clark",
+        "Tony Lewis"
       ],
       "isBye": false
     },
@@ -1277,8 +1277,8 @@
       "teamA": "Chatham",
       "teamB": "Cougars",
       "umpires": [
-        "Anne Vaughan (Wingham D3-W)",
-        "Jane McNeill (GL Strikers D3-W)"
+        "Anne Vaughan",
+        "Jane McNeill"
       ],
       "isBye": false
     },
@@ -1294,8 +1294,8 @@
       "teamA": "Gloucester",
       "teamB": "Wingham",
       "umpires": [
-        "Jay Quince (Tigers C-M)",
-        "Terry Bourke (Chatham D2-W)"
+        "Jay Quince",
+        "Terry Bourke"
       ],
       "isBye": false
     },
@@ -1311,8 +1311,8 @@
       "teamA": "Sharks",
       "teamB": "Tigers",
       "umpires": [
-        "Larry Scavino (Chatham B-M)",
-        "Deb Monck (Taree West B-M)"
+        "Larry Scavino",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -1328,8 +1328,8 @@
       "teamA": "Sharks",
       "teamB": "Great Lakes Strikers",
       "umpires": [
-        "Nathan Hamond (Chatham D3-W)",
-        "Dom Tag (Taree West D3-W)"
+        "Nathan Hamond",
+        "Dom Tag"
       ],
       "isBye": false
     },
@@ -1429,8 +1429,8 @@
       "teamA": "Sharks",
       "teamB": "Taree West",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Jacob Clark (Tigers B-M)"
+        "Tony Lewis",
+        "Jacob Clark"
       ],
       "isBye": false
     },
@@ -1446,8 +1446,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Nathan Fuller (Sharks A-M)",
-        "Leo Allan (Taree West A-M)"
+        "Nathan Fuller",
+        "Leo Allan"
       ],
       "isBye": false
     },
@@ -1463,8 +1463,8 @@
       "teamA": "Chatham",
       "teamB": "Wingham",
       "umpires": [
-        "Dom Tag (Taree West D3-W)",
-        "Mal Yarnold (Sharks C-M)"
+        "Dom Tag",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -1480,8 +1480,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Blake Chivas (Sharks D1-W)",
-        "Thomas Davy (TareeWest D2-W)"
+        "Blake Chivas",
+        "Thomas Davy"
       ],
       "isBye": false
     },
@@ -1497,8 +1497,8 @@
       "teamA": "Tigers",
       "teamB": "Cougars",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Nathan Hamond (Chatham D3-W)"
+        "Bruce Snape",
+        "Nathan Hamond"
       ],
       "isBye": false
     },
@@ -1514,8 +1514,8 @@
       "teamA": "Cougars",
       "teamB": "Great Lakes Strikers",
       "umpires": [
-        "Nathan Hamond (Chatham D3-W)",
-        "Nicole Clark (Tigers D3-W)"
+        "Nathan Hamond",
+        "Nicole Clark"
       ],
       "isBye": false
     },
@@ -1531,8 +1531,8 @@
       "teamA": "Sharks",
       "teamB": "Taree West",
       "umpires": [
-        "Janene Watts (Tigers D1-W)",
-        "Adam Birkefeld (Chatham D1-W)"
+        "Janene Watts",
+        "Adam Birkefeld"
       ],
       "isBye": false
     },
@@ -1548,8 +1548,8 @@
       "teamA": "Gloucester",
       "teamB": "Sharks",
       "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Scott Bishop (Wingham C-M)"
+        "Frank Birkefeld",
+        "Scott Bishop"
       ],
       "isBye": false
     },
@@ -1565,8 +1565,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Bronwyn Fuller (Sharks D3-W)",
-        "Anne Vaughan (Wingham D3-W)"
+        "Bronwyn Fuller",
+        "Anne Vaughan"
       ],
       "isBye": false
     },
@@ -1582,8 +1582,8 @@
       "teamA": "Sharks",
       "teamB": "Wingham",
       "umpires": [
-        "Larry Scavino (Chatham B-M)",
-        "Kerrie Reece (TareeWest D2-W)"
+        "Larry Scavino",
+        "Kerrie Reece"
       ],
       "isBye": false
     },
@@ -1599,8 +1599,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Brooke Sheldon (Sharks B-M)",
-        "Adam Johnson (Chatham B-M)"
+        "Brooke Sheldon",
+        "Adam Johnson"
       ],
       "isBye": false
     },
@@ -1616,8 +1616,8 @@
       "teamA": "Sharks",
       "teamB": "Wingham",
       "umpires": [
-        "Terry Bourke (Chatham D2-W)",
-        "Dom Tag (Taree West D3-W)"
+        "Terry Bourke",
+        "Dom Tag"
       ],
       "isBye": false
     },
@@ -1633,8 +1633,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Kate Neilson (Wingham D2-W)"
+        "Katrina Brown",
+        "Kate Neilson"
       ],
       "isBye": false
     },
@@ -1650,8 +1650,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Deb Monck (Taree West B-M)"
+        "Jacob Clark",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -1723,8 +1723,8 @@
       "teamA": "Wingham",
       "teamB": "Chatham",
       "umpires": [
-        "Kerrie Reece (TareeWest D2-W)",
-        "Katrina Brown (Sharks D2-W)"
+        "Kerrie Reece",
+        "Katrina Brown"
       ],
       "isBye": false
     },
@@ -1740,8 +1740,8 @@
       "teamA": "Taree West",
       "teamB": "Sharks",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Nathan Hamond (Chatham D3-W)"
+        "Jacob Clark",
+        "Nathan Hamond"
       ],
       "isBye": false
     },
@@ -1757,8 +1757,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Terry Bourke (Chatham D2-W)",
-        "Kate Neilson (Wingham D2-W)"
+        "Terry Bourke",
+        "Kate Neilson"
       ],
       "isBye": false
     },
@@ -1774,8 +1774,8 @@
       "teamA": "Sharks",
       "teamB": "Taree West",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Larry Scavino (Chatham B-M)"
+        "Tony Lewis",
+        "Larry Scavino"
       ],
       "isBye": false
     },
@@ -1791,8 +1791,8 @@
       "teamA": "Wingham",
       "teamB": "Tigers",
       "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Stephen George (Tigers D2-W)"
+        "Frank Birkefeld",
+        "Stephen George"
       ],
       "isBye": false
     },
@@ -1808,8 +1808,8 @@
       "teamA": "Cougars",
       "teamB": "Sharks",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Mal Yarnold (Sharks C-M)"
+        "Bruce Snape",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -1825,8 +1825,8 @@
       "teamA": "Cougars",
       "teamB": "Wingham",
       "umpires": [
-        "Jane McNeill (GL Strikers D3-W)",
-        "Dom Tag (Taree West D3-W)"
+        "Jane McNeill",
+        "Dom Tag"
       ],
       "isBye": false
     },
@@ -1842,8 +1842,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Brooke Sheldon (Sharks B-M)",
-        "Deb Monck (Taree West B-M)"
+        "Brooke Sheldon",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -1859,8 +1859,8 @@
       "teamA": "Gloucester",
       "teamB": "Chatham",
       "umpires": [
-        "Michael C Green (Cougars C-M)",
-        "Jay Quince (Tigers C-M)"
+        "Michael C Green",
+        "Jay Quince"
       ],
       "isBye": false
     },
@@ -1876,8 +1876,8 @@
       "teamA": "Taree West",
       "teamB": "Tigers",
       "umpires": [
-        "Adam Birkefeld (Chatham D1-W)",
-        "Gemma Turner (Chatham D1-W)"
+        "Adam Birkefeld",
+        "Gemma Turner"
       ],
       "isBye": false
     },
@@ -1893,8 +1893,8 @@
       "teamA": "Great Lakes Strikers",
       "teamB": "Chatham",
       "umpires": [
-        "Nicole Clark (Tigers D3-W)",
-        "Harley Bunyan (Cougars D3-W)"
+        "Nicole Clark",
+        "Harley Bunyan"
       ],
       "isBye": false
     },
@@ -1910,8 +1910,8 @@
       "teamA": "Taree West",
       "teamB": "Tigers",
       "umpires": [
-        "Eamon Smith (Chatham A-M)",
-        "Trent Hammond (Chatham A-M)"
+        "Eamon Smith",
+        "Trent Hammond"
       ],
       "isBye": false
     },
@@ -1983,8 +1983,8 @@
       "teamA": "Cougars",
       "teamB": "Taree West",
       "umpires": [
-        "Jane McNeill (GL Strikers D3-W)",
-        "Anne Vaughan (Wingham D3-W)"
+        "Jane McNeill",
+        "Anne Vaughan"
       ],
       "isBye": false
     },
@@ -2000,8 +2000,8 @@
       "teamA": "Tigers",
       "teamB": "Chatham",
       "umpires": [
-        "Nich Kennewell (Chatham D3-W)",
-        "Bronwyn Fuller (Sharks D3-W)"
+        "Nick Kennewell",
+        "Bronwyn Fuller"
       ],
       "isBye": false
     },
@@ -2017,8 +2017,8 @@
       "teamA": "Great Lakes Strikers",
       "teamB": "Wingham",
       "umpires": [
-        "Nathan Hamond (Chatham D3-W)",
-        "Dakota Sipek (Taree West D3-W)"
+        "Nathan Hamond",
+        "Dakota Sipek"
       ],
       "isBye": false
     },
@@ -2034,8 +2034,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Thomas Davy (TareeWest D2-W)",
-        "Jay Quince (Tigers C-M)"
+        "Thomas Davy",
+        "Jay Quince"
       ],
       "isBye": false
     },
@@ -2051,8 +2051,8 @@
       "teamA": "Chatham",
       "teamB": "Taree West",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Jacob Clark",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
@@ -2068,8 +2068,8 @@
       "teamA": "Taree West",
       "teamB": "Sharks",
       "umpires": [
-        "Stephen George (Tigers D2-W)",
-        "Kate Neilson (Wingham D2-W)"
+        "Stephen George",
+        "Kate Neilson"
       ],
       "isBye": false
     },
@@ -2085,8 +2085,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Deb Monck (Taree West B-M)",
-        "Adam Johnson (Chatham B-M)"
+        "Deb Monck",
+        "Adam Johnson"
       ],
       "isBye": false
     },
@@ -2102,8 +2102,7 @@
       "teamA": "Chatham",
       "teamB": "Tacking Point Thunder",
       "umpires": [
-        "Blake Chivas (Sharks D1-W)",
-        "Janene Watts (Tigers D1-W)"
+        "Blake Chivas"
       ],
       "isBye": false
     },
@@ -2119,8 +2118,8 @@
       "teamA": "Wingham",
       "teamB": "Cougars",
       "umpires": [
-        "Dom Tag (Taree West D3-W)",
-        "Bruce Snape (Gloucester C-M)"
+        "Dom Tag",
+        "Bruce Snape"
       ],
       "isBye": false
     },
@@ -2136,8 +2135,8 @@
       "teamA": "Sharks",
       "teamB": "Tigers",
       "umpires": [
-        "Gemma Turner (Chatham D1-W)",
-        "Leo Allan (Taree West A-M)"
+        "Gemma Turner",
+        "Leo Allan"
       ],
       "isBye": false
     },
@@ -2153,8 +2152,7 @@
       "teamA": "Chatham",
       "teamB": "Tacking Point Thunder",
       "umpires": [
-        "Nathan Fuller (Sharks A-M)",
-        "Tony Lewis (Tigers A-M)"
+        "Nathan Fuller"
       ],
       "isBye": false
     },
@@ -2170,8 +2168,8 @@
       "teamA": "Tigers",
       "teamB": "Gloucester",
       "umpires": [
-        "Scott Bishop (Wingham C-M)",
-        "Mal Yarnold (Sharks C-M)"
+        "Scott Bishop",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -2187,8 +2185,8 @@
       "teamA": "Chatham",
       "teamB": "Tigers",
       "umpires": [
-        "Kerrie Reece (TareeWest D2-W)",
-        "Katrina Brown (Sharks D2-W)"
+        "Kerrie Reece",
+        "Katrina Brown"
       ],
       "isBye": false
     },
@@ -2204,8 +2202,8 @@
       "teamA": "Sharks",
       "teamB": "Tigers",
       "umpires": [
-        "Eamon Smith (Chatham A-M)",
-        "Trent Hammond (Chatham A-M)"
+        "Eamon Smith",
+        "Trent Hammond"
       ],
       "isBye": false
     },
@@ -2277,8 +2275,8 @@
       "teamA": "Great Lakes Strikers",
       "teamB": "Taree West",
       "umpires": [
-        "Bronwyn Fuller (Sharks D3-W)",
-        "Anne Vaughan (Wingham D3-W)"
+        "Bronwyn Fuller",
+        "Anne Vaughan"
       ],
       "isBye": false
     },
@@ -2294,8 +2292,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Adam Johnson (Chatham B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Adam Johnson",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
@@ -2311,8 +2309,8 @@
       "teamA": "Wingham",
       "teamB": "Sharks",
       "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Mark Styles (Chatham C-M)"
+        "Frank Birkefeld",
+        "Mark Styles"
       ],
       "isBye": false
     },
@@ -2328,8 +2326,8 @@
       "teamA": "Wingham",
       "teamB": "Chatham",
       "umpires": [
-        "Jane McNeill (GL Strikers D3-W)",
-        "Deb Monck (Taree West B-M)"
+        "Jane McNeill",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -2345,8 +2343,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Nathan Hamond (Chatham D3-W)",
-        "Dom Tag (Taree West D3-W)"
+        "Nathan Hamond",
+        "Dom Tag"
       ],
       "isBye": false
     },
@@ -2362,8 +2360,8 @@
       "teamA": "Chatham",
       "teamB": "Tigers",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Mal Yarnold (Sharks C-M)"
+        "Tony Lewis",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -2379,8 +2377,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Kerrie Reece (TareeWest D2-W)",
-        "Kate Neilson (Wingham D2-W)"
+        "Kerrie Reece",
+        "Kate Neilson"
       ],
       "isBye": false
     },
@@ -2396,8 +2394,8 @@
       "teamA": "Taree West",
       "teamB": "Wingham",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Kelly Northam (Chatham D2-W)"
+        "Katrina Brown",
+        "Kelly Northam"
       ],
       "isBye": false
     },
@@ -2413,8 +2411,8 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Leo Allan (Taree West A-M)",
-        "Thomas Davy (TareeWest D2-W)"
+        "Leo Allan",
+        "Thomas Davy"
       ],
       "isBye": false
     },
@@ -2430,8 +2428,8 @@
       "teamA": "Chatham",
       "teamB": "Taree West",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Jacob Clark (Tigers B-M)"
+        "Katrina Brown",
+        "Jacob Clark"
       ],
       "isBye": false
     },
@@ -2447,8 +2445,8 @@
       "teamA": "Chatham",
       "teamB": "Taree West",
       "umpires": [
-        "Blake Chivas (Sharks D1-W)",
-        "Nathan Fuller (Sharks A-M)"
+        "Blake Chivas",
+        "Nathan Fuller"
       ],
       "isBye": false
     },
@@ -2464,8 +2462,8 @@
       "teamA": "Gloucester",
       "teamB": "Cougars",
       "umpires": [
-        "Jay Quince (Tigers C-M)",
-        "Nich Kennewell (Chatham D3-W)"
+        "Jay Quince",
+        "Nick Kennewell"
       ],
       "isBye": false
     },
@@ -2565,8 +2563,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Kate Neilson (Wingham D2-W)",
-        "Kerrie Reece (TareeWest D2-W)"
+        "Kate Neilson",
+        "Kerrie Reece"
       ],
       "isBye": false
     },
@@ -2582,8 +2580,8 @@
       "teamA": "Gloucester",
       "teamB": "Cougars",
       "umpires": [
-        "Mark Styles (Chatham C-M)",
-        "Thomas Davy (TareeWest D2-W)"
+        "Mark Styles",
+        "Thomas Davy"
       ],
       "isBye": false
     },
@@ -2599,8 +2597,8 @@
       "teamA": "Wingham",
       "teamB": "Sharks",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Jay Quince (Tigers C-M)"
+        "Tony Lewis",
+        "Jay Quince"
       ],
       "isBye": false
     },
@@ -2616,8 +2614,8 @@
       "teamA": "Wingham",
       "teamB": "Taree West",
       "umpires": [
-        "Terry Bourke (Chatham D2-W)",
-        "Kelly Northam (Chatham D2-W)"
+        "Terry Bourke",
+        "Kelly Northam"
       ],
       "isBye": false
     },
@@ -2633,8 +2631,8 @@
       "teamA": "Taree West",
       "teamB": "Tigers",
       "umpires": [
-        "Trent Hammond (Chatham A-M)",
-        "Nathan Fuller (Sharks A-M)"
+        "Trent Hammond",
+        "Nathan Fuller"
       ],
       "isBye": false
     },
@@ -2650,8 +2648,8 @@
       "teamA": "Chatham",
       "teamB": "Tigers",
       "umpires": [
-        "Michael C Green (Cougars C-M)",
-        "Mal Yarnold (Sharks C-M)"
+        "Michael C Green",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -2681,8 +2679,8 @@
       "teamA": "Taree West",
       "teamB": "Chatham",
       "umpires": [
-        "Brooke Sheldon (Sharks B-M)",
-        "Stephen George (Tigers D2-W)"
+        "Brooke Sheldon",
+        "Stephen George"
       ],
       "isBye": false
     },
@@ -2698,8 +2696,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Leo Allan (Taree West A-M)"
+        "Tony Lewis",
+        "Leo Allan"
       ],
       "isBye": false
     },
@@ -2715,8 +2713,8 @@
       "teamA": "Sharks",
       "teamB": "Taree West",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Larry Scavino (Chatham B-M)"
+        "Jacob Clark",
+        "Larry Scavino"
       ],
       "isBye": false
     },
@@ -2732,8 +2730,8 @@
       "teamA": "Sharks",
       "teamB": "Chatham",
       "umpires": [
-        "Janene Watts (Tigers D1-W)",
-        "Thomas Davy (TareeWest D2-W)"
+        "Janene Watts",
+        "Thomas Davy"
       ],
       "isBye": false
     },
@@ -2749,8 +2747,8 @@
       "teamA": "Sharks",
       "teamB": "Tigers",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Terry Bourke (Chatham D2-W)"
+        "Bruce Snape",
+        "Terry Bourke"
       ],
       "isBye": false
     },
@@ -2766,8 +2764,8 @@
       "teamA": "Wingham",
       "teamB": "Taree West",
       "umpires": [
-        "Nicole Clark (Tigers D3-W)",
-        "Harley Bunyan (Cougars D3-W)"
+        "Nicole Clark",
+        "Harley Bunyan"
       ],
       "isBye": false
     },
@@ -2783,25 +2781,8 @@
       "teamA": "Gloucester",
       "teamB": "Wingham",
       "umpires": [
-        "Mal Yarnold (Sharks C-M)",
-        "Jay Quince (Tigers C-M)"
-      ],
-      "isBye": false
-    },
-    {
-      "round": 10,
-      "day": "Saturday",
-      "grade": "B-Grade M",
-      "gender": "Men",
-      "gradeLabel": "B-Grade",
-      "date": "May 23rd",
-      "time": "2.30pm",
-      "field": "TLF",
-      "teamA": "Tigers",
-      "teamB": "Chatham",
-      "umpires": [
-        "Nathan Fuller (Sharks A-M)",
-        "Deb Monck (Taree West B-M)"
+        "Mal Yarnold",
+        "Jay Quince"
       ],
       "isBye": false
     },
@@ -2813,12 +2794,12 @@
       "gradeLabel": "Div 3",
       "date": "May 23rd",
       "time": "2.30pm",
-      "field": "Field 3",
+      "field": "TLF",
       "teamA": "Tigers",
       "teamB": "Cougars",
       "umpires": [
-        "Anne Vaughan (Wingham D3-W)",
-        "Bronwyn Fuller (Sharks D3-W)"
+        "Anne Vaughan",
+        "Bronwyn Fuller"
       ],
       "isBye": false
     },
@@ -2834,8 +2815,8 @@
       "teamA": "Chatham",
       "teamB": "Cougars",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Scott Bishop (Wingham C-M)"
+        "Jacob Clark",
+        "Scott Bishop"
       ],
       "isBye": false
     },
@@ -2851,8 +2832,8 @@
       "teamA": "Wingham",
       "teamB": "Tigers",
       "umpires": [
-        "Nathan Hamond (Chatham D3-W)",
-        "Nich Kennewell (Chatham D3-W)"
+        "Nathan Hamond",
+        "Nick Kennewell"
       ],
       "isBye": false
     },
@@ -2868,8 +2849,8 @@
       "teamA": "Chatham",
       "teamB": "Sharks",
       "umpires": [
-        "Damon Hoole (Tigers D3-W)",
-        "Harley Bunyan (Cougars D3-W)"
+        "Damon Hoole",
+        "Harley Bunyan"
       ],
       "isBye": false
     },
@@ -2969,8 +2950,8 @@
       "teamA": "Chatham",
       "teamB": "Wingham",
       "umpires": [
-        "Bruce Snape (Gloucester C-M)",
-        "Mal Yarnold (Sharks C-M)"
+        "Bruce Snape",
+        "Mal Yarnold"
       ],
       "isBye": false
     },
@@ -2986,8 +2967,8 @@
       "teamA": "Tigers",
       "teamB": "Sharks",
       "umpires": [
-        "Larry Scavino (Chatham B-M)",
-        "Deb Monck (Taree West B-M)"
+        "Larry Scavino",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -3003,8 +2984,8 @@
       "teamA": "Gloucester",
       "teamB": "Sharks",
       "umpires": [
-        "Mark Styles (Chatham C-M)",
-        "Scott Bishop (Wingham C-M)"
+        "Mark Styles",
+        "Scott Bishop"
       ],
       "isBye": false
     },
@@ -3020,8 +3001,8 @@
       "teamA": "Sharks",
       "teamB": "Tacking Point Thunder",
       "umpires": [
-        "Janene Watts (Tigers D1-W)",
-        "Thomas Davy (TareeWest D2-W)"
+        "Janene Watts",
+        "Thomas Davy"
       ],
       "isBye": false
     },
@@ -3037,25 +3018,25 @@
       "teamA": "Chatham",
       "teamB": "Taree West",
       "umpires": [
-        "Jacob Clark (Tigers B-M)",
-        "Brooke Sheldon (Sharks B-M)"
+        "Jacob Clark",
+        "Brooke Sheldon"
       ],
       "isBye": false
     },
     {
-      "round": 7,
+      "round": 11,
       "day": "Saturday",
-      "grade": "MNCHL W",
-      "gender": "Women",
-      "gradeLabel": "MNCHL",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
       "date": "May 30th",
       "time": "4.00pm",
       "field": "ATF",
       "teamA": "Tigers",
-      "teamB": "Taree West",
+      "teamB": "Cougars",
       "umpires": [
-        "Katrina Brown (Sharks D2-W)",
-        "Kerrie Reece (TareeWest D2-W)"
+        "Frank Birkefeld",
+        "Nick Kennewell"
       ],
       "isBye": false
     },
@@ -3071,25 +3052,8 @@
       "teamA": "Sharks",
       "teamB": "Tacking Point Thunder",
       "umpires": [
-        "Tony Lewis (Tigers A-M)",
-        "Leo Allan (Taree West A-M)"
-      ],
-      "isBye": false
-    },
-    {
-      "round": 11,
-      "day": "Saturday",
-      "grade": "C-Grade M",
-      "gender": "Men",
-      "gradeLabel": "C-Grade",
-      "date": "May 30th",
-      "time": "5.30pm",
-      "field": "ATF",
-      "teamA": "Tigers",
-      "teamB": "Cougars",
-      "umpires": [
-        "Frank Birkefeld (Chatham C-M)",
-        "Nich Kennewell (Chatham D3-W)"
+        "Tony Lewis",
+        "Leo Allan"
       ],
       "isBye": false
     },
@@ -3105,8 +3069,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Nathan Fuller (Sharks A-M)",
-        "Trent Hammond (Chatham A-M)"
+        "Nathan Fuller",
+        "Trent Hammond"
       ],
       "isBye": false
     },
@@ -3150,8 +3114,8 @@
       "teamA": "Tigers",
       "teamB": "Taree West",
       "umpires": [
-        "Trent Hammond (Chatham A-M)",
-        "Nathan Hamond (Chatham D3-W)"
+        "Trent Hammond",
+        "Nathan Hamond"
       ],
       "isBye": false
     },
@@ -3167,8 +3131,25 @@
       "teamA": "Sharks",
       "teamB": "Wingham",
       "umpires": [
-        "Stephen George (Tigers D2-W)",
-        "Tony Lewis (Tigers A-M)"
+        "Stephen George",
+        "Tony Lewis"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 10,
+      "day": "Tuesday",
+      "grade": "B-Grade M",
+      "gender": "Men",
+      "gradeLabel": "B-Grade",
+      "date": "June 9th",
+      "time": "6.30pm",
+      "field": "Field 3",
+      "teamA": "Tigers",
+      "teamB": "Chatham",
+      "umpires": [
+        "Nathan Fuller",
+        "Deb Monck"
       ],
       "isBye": false
     },
@@ -3437,20 +3418,6 @@
       "teamB": "BYE",
       "umpires": [],
       "isBye": true
-    },
-    {
-      "round": 13,
-      "day": "Friday",
-      "grade": "C-Grade M",
-      "gender": "Men",
-      "gradeLabel": "C-Grade",
-      "date": "June 19th",
-      "time": "6.30pm",
-      "field": "ATF",
-      "teamA": "Sharks",
-      "teamB": "Chatham",
-      "umpires": [],
-      "isBye": false
     },
     {
       "round": 9,
@@ -3547,6 +3514,20 @@
       "field": "TLF",
       "teamA": "Chatham",
       "teamB": "Tigers",
+      "umpires": [],
+      "isBye": false
+    },
+    {
+      "round": 13,
+      "day": "Saturday",
+      "grade": "Div 3 W",
+      "gender": "Women",
+      "gradeLabel": "Div 3",
+      "date": "June 20th",
+      "time": "1.00pm",
+      "field": "Field 3",
+      "teamA": "Tigers",
+      "teamB": "Taree West",
       "umpires": [],
       "isBye": false
     },
@@ -4545,8 +4526,8 @@
       "date": "July 18th",
       "time": "1.00pm",
       "field": "TLF",
-      "teamA": "Sharks",
-      "teamB": "Tigers",
+      "teamA": "Tigers",
+      "teamB": "Sharks",
       "umpires": [],
       "isBye": false
     },
@@ -4741,8 +4722,8 @@
       "date": "July 24th",
       "time": "6.30pm",
       "field": "TLF",
-      "teamA": "Sharks",
-      "teamB": "Taree West",
+      "teamA": "Taree West",
+      "teamB": "Sharks",
       "umpires": [],
       "isBye": false
     },
@@ -4783,8 +4764,8 @@
       "date": "July 24th",
       "time": "8.00pm",
       "field": "TLF",
-      "teamA": "Sharks",
-      "teamB": "Taree West",
+      "teamA": "Taree West",
+      "teamB": "Sharks",
       "umpires": [],
       "isBye": false
     },
@@ -5013,16 +4994,33 @@
       "isBye": false
     },
     {
-      "round": 23,
-      "day": "Sunday",
-      "grade": "Div 2 W",
+      "round": 7,
+      "day": "Saturday",
+      "grade": "MNCHL W",
       "gender": "Women",
-      "gradeLabel": "Div 2",
+      "gradeLabel": "MNCHL",
       "date": "July 26th",
       "time": "12.00pm",
       "field": "TLF",
-      "teamA": "Chatham",
-      "teamB": "Tigers",
+      "teamA": "Tigers",
+      "teamB": "Taree West",
+      "umpires": [
+        "Katrina Brown",
+        "Tony Lewis"
+      ],
+      "isBye": false
+    },
+    {
+      "round": 23,
+      "day": "Sunday",
+      "grade": "C-Grade M",
+      "gender": "Men",
+      "gradeLabel": "C-Grade",
+      "date": "July 26th",
+      "time": "12.00pm",
+      "field": "Field 3",
+      "teamA": "Cougars",
+      "teamB": "Wingham",
       "umpires": [],
       "isBye": false
     },
@@ -5071,14 +5069,14 @@
     {
       "round": 23,
       "day": "Sunday",
-      "grade": "C-Grade M",
-      "gender": "Men",
-      "gradeLabel": "C-Grade",
+      "grade": "Div 2 W",
+      "gender": "Women",
+      "gradeLabel": "Div 2",
       "date": "July 26th",
       "time": "3.00pm",
       "field": "ATF",
-      "teamA": "Cougars",
-      "teamB": "Wingham",
+      "teamA": "Chatham",
+      "teamB": "Tigers",
       "umpires": [],
       "isBye": false
     },
@@ -5203,8 +5201,8 @@
       "date": "August 1st",
       "time": "2.30pm",
       "field": "TLF",
-      "teamA": "Chatham",
-      "teamB": "Taree West",
+      "teamA": "Taree West",
+      "teamB": "Chatham",
       "umpires": [],
       "isBye": false
     },
@@ -5245,8 +5243,8 @@
       "date": "August 1st",
       "time": "4.00pm",
       "field": "TLF",
-      "teamA": "Chatham",
-      "teamB": "Taree West",
+      "teamA": "Taree West",
+      "teamB": "Chatham",
       "umpires": [],
       "isBye": false
     },
@@ -5911,20 +5909,6 @@
     {
       "round": 22,
       "day": "Saturday",
-      "grade": "Div 2 W",
-      "gender": "Women",
-      "gradeLabel": "Div 2",
-      "date": "August 22nd",
-      "time": "1.00pm",
-      "field": "ATF",
-      "teamA": "Tigers",
-      "teamB": "Sharks",
-      "umpires": [],
-      "isBye": false
-    },
-    {
-      "round": 22,
-      "day": "Saturday",
       "grade": "C-Grade M",
       "gender": "Men",
       "gradeLabel": "C-Grade",
@@ -6033,34 +6017,6 @@
       "teamB": "Great Lakes Strikers",
       "umpires": [],
       "isBye": false
-    },
-    {
-      "round": 22,
-      "day": null,
-      "grade": "Div 2 W",
-      "gender": "Women",
-      "gradeLabel": "Div 2",
-      "date": "August 22nd",
-      "time": null,
-      "field": null,
-      "teamA": "Taree West",
-      "teamB": "BYE",
-      "umpires": [],
-      "isBye": true
-    },
-    {
-      "round": 11,
-      "day": null,
-      "grade": "Div 3 W",
-      "gender": "Women",
-      "gradeLabel": "Div 3",
-      "date": "August 22nd",
-      "time": null,
-      "field": null,
-      "teamA": "Wingham",
-      "teamB": "BYE",
-      "umpires": [],
-      "isBye": true
     }
   ],
   "teams": [
