@@ -9,7 +9,7 @@ import json
 import subprocess
 from pathlib import Path
 
-PDF_PATH = Path(__file__).parent / "hockey2026.pdf"
+PDF_PATH = Path(__file__).parent / "7th_May_Update.pdf"
 OUTPUT_PATH = Path(__file__).parent / "../public/matches.json"
 
 # Run pdftotext -layout to get the structured text
@@ -80,6 +80,8 @@ for line in lines:
         continue
     if "Midweek" in line or "MIDWEEK" in line or "Under 14" in line or "State Champ" in line or "Using TLF" in line or "Final" in line or "FINAL" in line:
         continue
+    if "Deferred to" in line or "Deferred from" in line:
+        continue
 
     m_row = ROW_RE.match(line)
     if m_row:
@@ -106,19 +108,60 @@ for line in lines:
         # Strip umpire info appended after team_b (heuristic: umpire cols are far right)
         # Just take first "word groups" that look like a team name
         def clean_team(t):
+            if not t: return t
             t = t.strip()
             # Remove trailing umpire names — they appear after two or more spaces
             t = re.split(r'\s{3,}', t)[0].strip()
+            # Remove stray glued 'V's
+            t = re.sub(r'^V(?=[A-Z])', '', t)
+            t = re.sub(r'(?<=[a-z])V$', '', t)
             return t if t else None
+
+        # Use KNOWN_TEAMS to robustly strip umpires when spaces are missing
+        team_b_clean = None
+        rest_of_b = ""
+        for kt in sorted(KNOWN_TEAMS, key=len, reverse=True):
+            m = re.match(re.escape(kt), team_b.strip(), re.IGNORECASE)
+            if m:
+                team_b_clean = kt
+                rest_of_b = team_b.strip()[m.end():].strip()
+                break
+                
+        if not team_b_clean:
+            # Fallback if no exact match at the start, check if it starts with "V" + known team
+            for kt in sorted(KNOWN_TEAMS, key=len, reverse=True):
+                m = re.match(r'^V\s*' + re.escape(kt), team_b.strip(), re.IGNORECASE)
+                if m:
+                    team_b_clean = kt
+                    rest_of_b = team_b.strip()[m.end():].strip()
+                    break
+                    
+        if not team_b_clean:
+            team_b_parts = re.split(r'\s{3,}', team_b.strip())
+            team_b_clean = team_b_parts[0] if team_b_parts else None
+            rest_of_b = team_b.strip()[len(team_b_clean):].strip() if team_b_clean else ""
             
-        team_b_parts = re.split(r'\s{3,}', team_b.strip())
-        team_b_clean = team_b_parts[0] if team_b_parts else None
-        
-        umpires_raw = [p.strip() for p in team_b_parts[1:] if p.strip() and p.strip() != '&']
+        umpires_raw = [p.strip() for p in re.split(r'\s{3,}', rest_of_b) if p.strip() and p.strip() != '&']
         umpires = []
         for u in umpires_raw:
             u = u.strip('&').strip()
+            # Remove team names in parentheses e.g. (Tigers D1-W)
+            u = re.sub(r'\s*\([^)]*\)', '', u).strip()
+            
             if u and u != "UMPIRES" and u.lower() not in ["grand finals", "game times", "maybe subject to", "minor change", "games times"]:
+                # Title case the name to merge case differences like "Dakota sipek" and "Dakota Sipek"
+                words = []
+                for w in u.split():
+                    if w.lower() == "mcneill":
+                        words.append("McNeill")
+                    else:
+                        words.append(w.capitalize())
+                u = " ".join(words)
+                
+                # Fix typo
+                if u == "Nich Kennewell":
+                    u = "Nick Kennewell"
+                    
                 umpires.append(u)
 
         match_obj = {
@@ -131,7 +174,7 @@ for line in lines:
             "time": time_str,
             "field": field if field else None,
             "teamA": clean_team(team_a),
-            "teamB": team_b_clean,
+            "teamB": clean_team(team_b_clean),
             "umpires": umpires,
             "isBye": False,
         }

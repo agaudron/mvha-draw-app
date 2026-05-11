@@ -16,7 +16,6 @@ KNOWN_DIVISIONS = {
     "Juniors Division 1": {"key": "Div 1",  "label": "Division 1", "gender": "Mixed", "ageGroup": "Junior"},
     "Juniors Division 2": {"key": "Div 2",  "label": "Division 2", "gender": "Mixed", "ageGroup": "Junior"},
     "Juniors HIN2H U12’s": {"key": "U12s",   "label": "Under 12s",  "gender": "Mixed", "ageGroup": "Under 12s"},
-    "Juniors Under 12’s": {"key": "U12s",   "label": "Under 12s",  "gender": "Mixed", "ageGroup": "Under 12s"},
     "Juniors HIN2H U10’s": {"key": "U10s",   "label": "Under 10s",  "gender": "Mixed", "ageGroup": "Under 10s"},
     "Juniors HIN2H U8’s":  {"key": "U8s",    "label": "Under 8s",   "gender": "Mixed", "ageGroup": "Under 8s"},
 }
@@ -67,38 +66,16 @@ TEAM_FIXES = {
     r"Tacking\s+Point\s+Thunder": "Tacking Point Thunder",
     r"Great\s+Lakes\s+Strikers": "Great Lakes Strikers",
     r"Taree\s+West": "Taree West",
-    r"TWHC": "Taree West",
 }
-
-ROOT_CLUBS = [
-    "Sharks", "Tigers", "Chatham", "Wingham", "Great Lakes Strikers", 
-    "Gloucester", "Cougars", "Tacking Point Thunder", "Taree West",
-]
 
 def normalise_team(raw):
     if not raw: return None
     t = raw.strip()
     for pattern, replacement in TEAM_FIXES.items():
         t = re.sub(pattern, replacement, t, flags=re.IGNORECASE)
-        
-    for club in ROOT_CLUBS:
-        if club.lower() in t.lower():
-            return club
-            
-    # Fallback to strip common junk if no root club matched
-    t = re.sub(r'(?i)\b(U\d+|Under \d+|Div \d+|Juniors?|Hockey Club|Raiders)\b', '', t)
-    t = re.sub(r'\(.*?\)', '', t)
-    t = re.sub(r'[\'’]s', '', t, flags=re.IGNORECASE)
-    t = re.sub(r'\s+', ' ', t).strip()
-    
     return t if t else None
 
-FIELD_NAME_MAP = {
-    'T3': 'Field 3',
-    'Club Taree Terry Launders Field': 'TLF',
-    'New Era Turf 3': 'Field 3',
-    'McDonalds Allan Taylor Field': 'ATF'
-}
+FIELD_NAME_MAP = {'T3': 'Field 3'}
 def normalise_field(raw):
     if not raw: return None
     return FIELD_NAME_MAP.get(raw.strip(), raw.strip())

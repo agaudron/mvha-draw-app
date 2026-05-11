@@ -4,7 +4,7 @@ const SENIOR_GRADE_ORDER = ['B-Grade M', 'C-Grade M', 'MNCHL M', 'MNCHL W', 'Div
 const JUNIOR_GRADE_ORDER = ['Div 1', 'Div 2', 'U12s', 'U10s', 'U8s']
 
 export default function FilterBar({ data, filters, onFilterChange, onClear, theme, setTheme, mode, onModeChange }) {
-  const { gradeKeys = [], team, genderKey, monthKey, fieldKey, umpireKey } = filters
+  const { gradeKeys = [], team, genderKey, monthKey, fieldKey, umpireKey, roundKey } = filters
   const isJunior = mode === 'junior'
 
   const allUmpires = useMemo(() => {
@@ -14,6 +14,15 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
       if (m.umpires) m.umpires.forEach(u => set.add(u))
     })
     return [...set].sort()
+  }, [data])
+
+  const allRounds = useMemo(() => {
+    if (!data) return []
+    const set = new Set()
+    data.matches.forEach(m => {
+      if (m.round != null) set.add(m.round)
+    })
+    return [...set].sort((a, b) => a - b)
   }, [data])
 
   const allTeams = useMemo(() => {
@@ -199,6 +208,23 @@ export default function FilterBar({ data, filters, onFilterChange, onClear, them
           ))}
         </select>
       </div>
+
+      {/* Round filter */}
+      {allRounds.length > 0 && (
+        <div className="filter-row" style={{ width: '100%' }}>
+          <span className="filter-label">Round</span>
+          <select
+            className="filter-select"
+            value={roundKey || ''}
+            onChange={e => onFilterChange('roundKey', e.target.value ? Number(e.target.value) : '')}
+          >
+            <option value="">All Rounds</option>
+            {allRounds.map(r => (
+              <option key={r} value={r}>Round {r}</option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {/* Field filter */}
       <div className="filter-row">

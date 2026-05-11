@@ -36,6 +36,7 @@ export default function App() {
       monthKey: p.get('month') || '',
       fieldKey: p.get('field') || '',
       umpireKey: p.get('umpire') || '',
+      roundKey: p.get('round') ? Number(p.get('round')) : '',
     }
   }
 
@@ -85,7 +86,7 @@ export default function App() {
   }, [data])
 
   const handleClear = useCallback(() => {
-    setFilters({ gradeKeys: [], team: '', genderKey: '', monthKey: '', fieldKey: '', umpireKey: '' })
+    setFilters({ gradeKeys: [], team: '', genderKey: '', monthKey: '', fieldKey: '', umpireKey: '', roundKey: '' })
     setShowByes(false)
   }, [])
 
@@ -122,6 +123,7 @@ export default function App() {
     if (filters.monthKey) p.set('month', filters.monthKey)
     if (filters.fieldKey) p.set('field', filters.fieldKey)
     if (filters.umpireKey) p.set('umpire', filters.umpireKey)
+    if (filters.roundKey !== '') p.set('round', filters.roundKey)
     if (showPastGames) p.set('past', '1')
     const qs = p.toString()
     const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname
@@ -131,7 +133,6 @@ export default function App() {
   // EASTER EGG STATE
   const [seasonClicks, setSeasonClicks] = useState(0)
   const [showDoom, setShowDoom] = useState(false)
-  const [showWarning, setShowWarning] = useState(true)
 
   const handleSeasonClick = () => {
     if (seasonClicks + 1 >= 7) {
@@ -144,7 +145,7 @@ export default function App() {
 
   const baseFilteredMatches = useMemo(() => {
     if (!data) return []
-    const { gradeKey, team, genderKey, monthKey, fieldKey, umpireKey } = filters
+    const { gradeKey, team, genderKey, monthKey, fieldKey, umpireKey, roundKey } = filters
     const teamLower = team.toLowerCase().trim()
     const now = new Date()
 
@@ -165,6 +166,7 @@ export default function App() {
       if (monthKey && m.date && !m.date.startsWith(monthKey)) return false
       if (fieldKey && (m.isBye || m.field !== fieldKey)) return false
       if (umpireKey && (!m.umpires || !m.umpires.includes(umpireKey))) return false
+      if (roundKey !== '' && m.round !== roundKey) return false
       if (teamLower) {
         const a = (m.teamA || '').toLowerCase()
         const b = (m.teamB || '').toLowerCase()
@@ -232,48 +234,6 @@ export default function App() {
 
   return (
     <div className="app">
-      {showWarning && (
-        <div style={{
-          position: 'fixed',
-          bottom: '24px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: '#ef4444',
-          color: '#ffffff',
-          padding: '12px 24px',
-          borderRadius: 'var(--radius-md)',
-          boxShadow: 'var(--shadow-card)',
-          zIndex: 1000,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '16px',
-          fontWeight: '500',
-          fontSize: '0.95rem',
-          maxWidth: '90vw',
-          textAlign: 'center',
-          border: '1px solid rgba(255, 255, 255, 0.2)'
-        }}>
-          <span>
-            ⚠️ Draw has not been updated with the latest 7th May Update. <a href={`${import.meta.env.BASE_URL}7th_May_Update.pdf`} target="_blank" rel="noopener noreferrer" style={{color: '#ffffff', textDecoration: 'underline', fontWeight: 'bold'}}>Latest PDF Here</a>.
-          </span>
-          <button 
-            onClick={() => setShowWarning(false)}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#ffffff',
-              cursor: 'pointer',
-              fontSize: '20px',
-              padding: '0 4px',
-              opacity: 0.8,
-              lineHeight: 1
-            }}
-            title="Dismiss"
-          >
-            ×
-          </button>
-        </div>
-      )}
       {showTeamsModal && (
         <TeamsModal
           onClose={() => setShowTeamsModal(false)}
@@ -286,7 +246,7 @@ export default function App() {
               localStorage.setItem('drawMode', targetMode)
               setMode(targetMode)
             }
-            setFilters({ gradeKeys: [gradeKey], team: '', genderKey: '', monthKey: '', fieldKey: '', umpireKey: '' })
+            setFilters({ gradeKeys: [gradeKey], team: '', genderKey: '', monthKey: '', fieldKey: '', umpireKey: '', roundKey: '' })
             setShowTeamsModal(false)
           }}
         />
