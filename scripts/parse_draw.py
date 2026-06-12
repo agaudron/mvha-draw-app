@@ -9,7 +9,7 @@ import json
 import subprocess
 from pathlib import Path
 
-PDF_PATH = Path(__file__).parent / "7th_May_Update.pdf"
+PDF_PATH = Path(__file__).parent / "12th_June_Update.pdf"
 OUTPUT_PATH = Path(__file__).parent / "../public/matches.json"
 
 # Run pdftotext -layout to get the structured text
@@ -141,7 +141,7 @@ for line in lines:
             team_b_clean = team_b_parts[0] if team_b_parts else None
             rest_of_b = team_b.strip()[len(team_b_clean):].strip() if team_b_clean else ""
             
-        umpires_raw = [p.strip() for p in re.split(r'\s{3,}', rest_of_b) if p.strip() and p.strip() != '&']
+        umpires_raw = [p.strip() for p in re.split(r'\s{3,}|(?<=\))\s+(?=\S)', rest_of_b) if p.strip() and p.strip() != '&']
         umpires = []
         for u in umpires_raw:
             u = u.strip('&').strip()

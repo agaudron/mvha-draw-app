@@ -339,6 +339,36 @@ export default function App() {
 
                 <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <a
+                    href="https://cdn.revolutionise.com.au/site/njw0uibhfmhm4zue.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View Original PDF Draw"
+                    style={{
+                      fontSize: '0.85rem',
+                      fontWeight: '700',
+                      color: '#fff',
+                      background: 'linear-gradient(135deg, var(--color-accent-1), #8b5cf6)',
+                      padding: '6px 12px',
+                      borderRadius: 'var(--radius-sm)',
+                      border: 'none',
+                      whiteSpace: 'nowrap',
+                      textDecoration: 'none',
+                      boxShadow: '0 2px 10px rgba(59, 130, 246, 0.4)',
+                      transition: 'transform 0.2s, box-shadow 0.2s',
+                      display: 'inline-block'
+                    }}
+                    onMouseOver={e => {
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.boxShadow = '0 4px 14px rgba(59, 130, 246, 0.6)';
+                    }}
+                    onMouseOut={e => {
+                      e.currentTarget.style.transform = 'none';
+                      e.currentTarget.style.boxShadow = '0 2px 10px rgba(59, 130, 246, 0.4)';
+                    }}
+                  >
+                    Updated June 1st!
+                  </a>
+                  <a
                     href="https://github.com/agaudron/mvha-draw-app"
                     target="_blank"
                     rel="noopener noreferrer"
